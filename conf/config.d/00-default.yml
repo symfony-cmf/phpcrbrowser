@@ -1,0 +1,44 @@
+
+#Preserve "white" spaces on empty lines.
+default: &default
+    configCache: false
+    tmpdir: "{API_PROJECT_DIR}tmp/"
+    
+    hosts:
+        example.org:
+    
+    exceptionhandler:
+        "*": default
+        
+    allowDomDump: true
+    
+    lang:
+        dir: "{API_PROJECT_DIR}lang"
+        fileprefix: lang
+        default: en
+        languages: [en]
+    
+    db:
+        default:
+            driver: mdb2
+            dsn: mysql://dbuser@localhost/example
+            
+    jcr: 
+        default.crx:
+            url: http://localhost:7402/crx/server
+            transport: davex
+            workspace: crx.default
+            user: admin
+            pass: admin
+        default:
+            url: http://localhost:7402/crx/server
+            transport: davex
+            workspace: crx.default
+            user: admin
+            pass: admin
+        anonym:
+            url: http://localhost:7402/crx/server
+            transport: davex
+            workspace: crx.default
+            user: everyone
+            pass: 

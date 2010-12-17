@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<catalogue >
+<!-- js/bxeFunctions.js -->
+	<message key="THIS DOCUMENT COULD NOT BE SAVED!\n You are using a Mozilla release with a broken XMLSerializer implementation.\n Mozilla 1.7 and Firefox 0.9/0.9.1 are known to have this bug.\n Please up- or downgrade.">CE DOCUMENT NE PEUT PAS &#202;TRE SAUVEGARD&#201;!\n Vous utilisez une version de Mozilla avec un XMLSerializer bogu&#233;.\n Mozilla 1.7 et Firefox 0.9/0.9.1 ont ce bug.\n Changez de version.</message>
+	<message key="You're in Source Mode. Not possible to use this button">Vous &#234;tes en Mode Source. Il n\'est pas possible d\'utiliser ce bouton</message>
+	<message key="Saving">Sauvegarde en cours</message>
+	<message key="Document couldn't be saved">Le document n\'a pas pu &#234;tre sauvegard&#233;</message>
+	<message key="Document successfully saved">Le document a bien &#233;t&#233; sauvegard&#233;</message>
+	<message key="Benchmark ">Benchmark </message>
+	<message key="Total ">Total </message>
+	
+	<message key="Edit {0} Attributes">&#201;diter les attributs de {0}</message>
+	<message key="Copy {0} Element">Copier l\'&#233;l&#233;ment {0}</message>
+	<message key="Append {0} from Clipboard">Ajouter {0} du presse-papiers</message>
+	<message key="Delete {0} Element">Supprimer l\'&#233;l&#233;ment {0}</message>
+	<message key="Deletes the Element and all its children">Supprimer l\'&#233;l&#233;ment et tout ses enfants</message>
+	<message key="Clean ">Nettoyer</message>
+	<message key="Removes the Element, but not its children">Supprimer l\'&#233;l&#233;ment mais pas ses enfants</message>
+	<message key="Move up">Remonter</message>
+	<message key="Move down">Descendre</message>
+	<message key="Split right">Scinder &#224; droite</message>
+	<message key="Split down">Scinder en bas</message>
+	<message key="Merge right">Fusionner &#224; droite</message>
+	<message key="Merge down">Fusionner en bas</message>
+	<message key="Append Row">Ajouter une ligne</message>
+	<message key="Append Col">Ajouter une colonne</message>
+	<message key="Remove Row">Enlever une ligne</message>
+	<message key="Remove Col">Enlever une colonne</message>
+	
+	<!-- Menu	 -->
+	<message key="Save">Sauvegarder</message>
+	<message key="Save &amp; Exit">Sauvegarder &amp; Quitter</message>
+	<message key="Exit">Quitter</message>
+	<message key="File">Fichier</message> 
+	<message key="Undo">Annuler</message>
+	<message key="Redo">Refaire</message>
+	<message key="Edit">&#201;diter</message>
+	<message key="Show XML Document">Afficher le document XML</message>
+	<message key="Show RNG Document">Afficher le document RNG</message>
+	<message key="Debug">D&#233;boguer</message>
+	<message key="About Bitflux Editor">&#192; propos de Bitflux Editor</message>
+	<message key="Help">Aide</message>
+	<message key="BXE Website">Site Web BXE</message>
+	<message key="Show System Info">Afficher les informations syst&#232;mes</message>
+	<message key="System Info">Informations syst&#232;mes</message>
+	<message key="BXE Version: ">Version de BXE: </message>
+	<message key="BXE Build Date: ">Date de construction BXE: </message>
+	<message key="BXE Revision: ">N� de r&#233;vision BXE: </message>
+	<message key="User Agent: ">Navigateur : </message>
+	<message key="OK">OK</message>
+	<message key="Report Bug">Rapport de Bogue</message>
+	<message key="Help">Aide</message>
+	<message key="no block found">pas de bloc trouv&#233;</message>
+	<message key="Enter the image url or file name:">Entrez l\'url de l\'image ou son nom de fichier:</message>
+	<message key="Image URL:">URL de l\'image:</message>
+	<message key="{0} is not allowed as child of {1}">{0} n\'est pas un fils de {1}</message>
+	<message key="Table is not allowed here"></message>
+	<message key="Create Table">Cr&#233;er un tableau</message>
+	<message key="Can't create table: invalid data">Impossible de cr&#233;er le tableau: donn&#233;es invalides</message>
+	<message key="number of rows">nombre de lignes</message>
+	<message key="number of cols">nombre de colonnes</message>
+	<message key="Enter a URL:">Entrez l\'URL:</message>
+	<message key="ERROR in Bitflux Editor:">Erreur dans Bitflux Editor:</message>
+	<message key="In File: ">Dans le fichier: </message>
+	<message key="Linenumber: ">Ligne: </message>
+	<message key="Type: ">Type: </message>
+	<message key="Stack:">Pile :</message>
+	<message key="You have unsaved changes.\n Click cancel to return to the document.\n Click OK to really leave to page.">Vou avez effectu&#233; des changements qui n\'ont pas &#233;t&#233; sauvegard&#233;s.\nCliquez sur cancel pour revenir au document.\nCliquez sur OK pour quitter la page.</message>
+	<message key="There is already a link here, please use the 'Edit Attributes' function, to edit the link.">Ceci est d&#233;j&#224; un lien, veuillez utiliser la fonction \'&#201;diter les attributs\' pour &#233;diter le lien.</message>
+	<message key="Alert">Alerte</message>
+	<message key="Validation Alert">Alerte de Validation</message>
+	
+<!-- js/bxeXMLDocument.js -->
+	<message key="xsltransformdoc.xsldoc is : "></message>
+	<message key="Something went wrong during importing the XSLT document."></message>
+	<message key="XHTML loaded..."></message>
+	<message key=" Loading Failed. no 'body' element found in your external XHTML document."></message>
+	<message key="no 'body' element found in your external XHTML document. "></message>
+	<message key="Import external XHTML ..."></message>
+	<message key="The xhtmlfile: '{0}' was not found"></message>
+	
+<!-- js/table.js -->
+	<message key="There's no right cell to be merged"></message>
+	<message key="Right cell's rowspan is different to this cell's rowspan, merging not possible"></message>
+	<message key="There's no cell below to be merged"></message>
+	<message key="Down cell's colspan is different to this cell's colspan, merging not possible"></message>
+	<message key="Columns"></message>
+	<message key="Rows"></message>
+	<message key="create">cr&#233;er</message>
+	<message key="Nothing selected, please select the point, where you want the table inserted"></message>
+	<message key="No table-cell (but {0}) selected, please choose one"></message>
+	<message key="add row">ajouter la ligne</message>
+	<message key="add col">ajouter la colonne</message>
+	<message key="add">ajouter</message>
+	<message key="ERROR: could not find the cell in matrix!"></message>
+	<message key="rowPos: {0}"></message>
+	<message key="no cell node at r={0} c={1}"></message>
+	<message key="got no table body!"></message>
+	
+<!-- js/widget.js -->
+	<message key=" Append "> Ajouter </message>
+	<message key="Choose Subelement of {0}">Choisir les sous-&#233;l&#233;ments de {0}</message>
+	<message key=" Append to "> Ajouter &#224; </message>
+	<message key="Append">Ajouter</message>
+	<message key="Insert ...">Ins&#233;rer ...</message>
+	<message key="Insert">Ins&#233;rer</message>
+	<message key="Cancel">Annuler</message>
+	<message key="Edit Attributes">&#201;diter les attributs</message>
+	<message key="Edit Attributes of {0}">&#201;diter les attributs de {0}</message>
+	
+</catalogue>

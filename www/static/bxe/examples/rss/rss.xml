@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<rss xmlns:blogChannel="http://backend.userland.com/blogChannelModule"
+ xmlns:xhtml="http://www.w3.org/1999/xhtml"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:blog="http://bitflux.org/doctypes/blog" xmlns:php="http://php.net/xsl" version="2.0">
+    <channel>
+        <title>Liip Blog</title>
+        <link>http://blog.liip.ch/</link>
+        <description>Blog of Liip AG</description>
+        <item>
+            <title>Latest comments RSS feed added</title>
+            <link>http://blog.liip.ch/archive/none.html</link>
+            <guid isPermaLink="false">http://blog.liip.ch/p2029.html</guid>
+            <content:encoded xmlns="http://www.w3.org/1999/xhtml">
+                <p>This blog has now a <a href="http://blog.liip.ch/latestcomments.xml">latest comments RSS feed</a>. All other BxCMS based blogs, as well, of course ;)</p>
+
+            </content:encoded>
+            <dc:subject>Liip :: Blog</dc:subject>
+            <dc:subject>Blogging</dc:subject>
+            <dc:creator>chregu</dc:creator>
+            <dc:date>2005-02-10T15:41+00:00</dc:date>
+        </item>
+        <item>
+            <title>Blog death match</title>
+            <link>http://blog.liip.ch/archive/blog-death-match-.html</link>
+            <guid isPermaLink="false">http://blog.liip.ch/p2027.html</guid>
+            <content:encoded xmlns="http://www.w3.org/1999/xhtml">
+                <p>
+                    <a href="http://gutfeldt.ch/matthias/blog/">Matthias</a> vs. <a href="http://sistm.kaywa.ch/">sistm</a>
+                </p>
+                <p>A long read, but don't miss the comments ;)</p>
+                <p>Have fun (but it's in German).</p>
+                <p>All started with <a href="http://blog.liip.ch/archive/the-tagesschau-scandal-.html">"The Tagesschau Scandal"</a> I blogged about earlier.</p>
+
+            </content:encoded>
+            <dc:subject>Blogging</dc:subject>
+            <dc:creator>chregu</dc:creator>
+            <dc:date>2005-02-10T14:04+00:00</dc:date>
+        </item>
+        <item>
+            <title>XML error handling update</title>
+            <link>http://blog.liip.ch/archive/xml-error-handling-update.html</link>
+            <guid isPermaLink="false">http://blog.liip.ch/p2026.html</guid>
+            <content:encoded xmlns="http://www.w3.org/1999/xhtml">
+                <p>Rob updated <a href="http://ctindustries.net/libxml/libxml_error.diff.txt">his patch</a> for better XML error handling support in PHP 5.1.</p>
+                <p>You can now do something like this:</p>
+
+                <p>If you don't set <em>libxml_use_internal_errors</em>, it does work like in PHP 5.0 and the above code would return nothing.</p>
+                <p>It doesn't work 100% correctly for XSLT errors right now, but we will fix that until 5.1 comes out ;)</p>
+                <p>Update: The problem with some XSLT errors are now also fixed. Get the patch from the above location (or wait until it's committed into CVS)</p>
+                <p>Update 2: It's in CVS now.</p>
+
+            </content:encoded>
+            <dc:subject>PHP</dc:subject>
+            <dc:creator>chregu</dc:creator>
+            <dc:date>2005-02-08T20:12+00:00</dc:date>
+        </item>
+        <item>
+            <title>XMLReader in PHP 5.1</title>
+            <link>http://blog.liip.ch/archive/xmlreader-in-php-5-1.html</link>
+            <guid isPermaLink="false">http://blog.liip.ch/p2025.html</guid>
+            <content:encoded xmlns="http://www.w3.org/1999/xhtml">
+                <p>
+ Finally, XMLReader made it into the standard PHP distribution for the upcoming 5.1. No more fiddling with <a href="http://pecl.php.net/">pecl</a> (which works fine, btw ;) ), if you want XMLReader built in. It's not enabled by default, but it's in the sources and doesn't have more dependencies than DOM or SimpleXML (that is libxml2 2.6.x).
+</p>
+                <p>
+ Documentation is a little bit sparse right now, but see <a href="http://php5.bitflux.org/xmloncrack/slide_21.php">my slides</a>, my posts about <a href="http://blog.liip.ch/archive/processing_large_xml_documents_with_php.html">Processing Large XML Documents</a> (plus <a href="http://blog.liip.ch/archive/processing_large_xml_documents_with_php_5_update.html">Update</a>), the <a href="http://xmlsoft.org/xmlreader.html">xmlreader interface tutorial from xmlsoft.org</a> (this is for the C API, but the PHP API is very close and a good introduction into the general idea of xmlreader) or just <a href="http://cvs.php.net/co.php/php-src/ext/xmlreader/php_xmlreader.c?r=HEAD">look at the sources</a> and search for <em>{{{ proto</em> (generally a good idea, if documentation is missing for an extension).
+</p>
+                <p>
+ If you're still stuck in ext/xml aka SAX world, it's definitively worth giving a try (and it works also for PHP 5.0, if you install it from pecl).
+</p>
+                <p>
+ Update: Rob's working on real documentation.
+</p>
+            </content:encoded>
+            <dc:subject>PHP</dc:subject>
+            <dc:creator>chregu</dc:creator>
+            <dc:date>2005-02-08T12:22+00:00</dc:date>
+        </item>
+        <item>
+            <title>Mac kaputt (not :) )</title>
+            <link>http://blog.liip.ch/archive/mac-kaputt.html</link>
+            <guid isPermaLink="false">http://blog.liip.ch/p2024.html</guid>
+            <content:encoded xmlns="http://www.w3.org/1999/xhtml">
+            
+            <p>Shiiiiiit, I broke my mac... Spilled water over the keyboard
+(grrrreat...). It didn't show any problems first, but after the
+keyboard cleaning the reboot didn't work anymore. Just beeps 3 times on
+startup (which means "All ram defect"). Will bring it to the
+repair shop tomorrow. Really hope it's only the ram, I don't want to
+buy a new one right now ...</p>
+<p>
+   Update: It runs again... Hoooray ;)
+                </p>
+            </content:encoded>
+            <dc:subject>Apple</dc:subject>
+            <dc:creator>chregu</dc:creator>
+            <dc:date>2005-02-07T20:32+00:00</dc:date>
+        </item>
+    </channel>
+</rss>

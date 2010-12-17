@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='Utf-8'?>
+<document>
+	<header>
+		<shorttitle>Testseite Liip AG.</shorttitle>
+		<subs>
+			<ilink url='/blog'></ilink>
+		</subs>
+		<keywords></keywords>
+		<specials/>
+		
+	</header>
+	<content>
+		<title>Willkommen auf der BXE Testseite der Liip AG</title>
+		<abstract>Das ist eine Testseite</abstract>
+		<page coid='id0x043ea0e0'>
+			<article coid='id0x03929d18'>
+				<collection coid='id0x04578a28' layout='row'>
+					<block coid='id0x024eea28' align='left'>
+						<spacer display='line'> </spacer>
+						<systemhousenavigator/>
+						<spacer display='line'> </spacer>
+						<paraheadline coid='id0x0435f0f0'>Im Mittelpunkt unserer Arbeit stehen Sie, unser Kunde.</paraheadline>
+						<news coid='id0x030537b0'>
+							<title>Liip AG: Agile Web Development</title>
+							<timestamp>
+								<year>2008</year>
+								<month>01</month>
+								<day>21</day>
+								<hour>09</hour>
+								<minute>00</minute>
+							</timestamp>
+							<source>Liip AG</source>
+							<content>
+								<para>BXE - The Wysiwyg XML Editor </para>
+							</content>
+							<author>Liip AG</author>
+							<contact>
+								<email address='#address'>chregu@liip.com</email>
+							</contact>
+						</news>
+					</block>
+				</collection>
+				<collection coid='id0x027a19a8' layout='col'>
+					<block coid='id0x01ea3b58' align='left'>
+						<paraheadline coid='id0x01d17b30'>Die aktuellen Liip-Meldungen:</paraheadline>
+<competencecenter coid='id0x037c8230'>
+	<title>Herzlich Willkommen im Bereich</title>
+	<name>Agile Web Development</name>
+	<concept>Wir sind der Spezialist für die Mechanische Konstruktion mit Autodesk Mechanik Produkten und dem EDM System Compass.</concept>
+	<portfolio>
+		<itemizedlist>
+			<bxlistitem>Einmal eingeben, mehrmals ausgeben: Flux CMS</bxlistitem>
+			<bxlistitem>Editieren von Inhalten leicht gemacht: BXE WYSIWYG Editor</bxlistitem>
+			<bxlistitem>Von den XML und PHP Experten: Liip ist aktiv in der Entwicklung der Programmiersprache PHP involviert.</bxlistitem>
+		</itemizedlist>
+	</portfolio>
+	<team>31 Mitarbeiter in Freiburg, Bern und Zürich</team>
+	<customers>Kunden die uns vertrauen sind unsere Referenzen.</customers>
+	<data>local.ch, Zürich,
+			Schweizerische Nationalbank, Bern / Zürich, 
+			Cablecom GmbH, Zürich, 
+			Radio DRS, Bern,
+			Schweizer Fernsehen (SF), Zürich, 
+			Raiffeisen, St. Gallen, 
+			Schweizerische Eidgenossenschaft, Bern </data>
+	<contact>
+		<person coid='id0x444c8230'>
+			<location>Zürich</location>
+			<firstname>Chregu</firstname>
+			<lastname>Stocker</lastname>
+			<fon>+41 44 240 56 70</fon>
+			<email address='chregu@liip.com'>chregu@liip.com</email>
+		</person>
+	    <person coid='id0x444c8230'>
+			<location>Freiburg</location>
+			<firstname>Gerhard</firstname>
+			<lastname>Andrey</lastname>
+			<fon>+41 26 422 25 11</fon>
+			<email address='gerhard.andrey@liip.com'>gerhard.andrey@liip.com</email>
+		</person>
+	</contact>
+</competencecenter>
+						<news_preview_navigator/>
+						<xform type='contact_standard' recipient='info@Liip.com'/>
+						<xform type='ir_mailservice' recipient='info@Liip.com'/>
+						<xform type='press_mailservice' recipient='info@Liip.com'/>
+						<competencecenternavigator/>
+					</block>
+				</collection>
+			</article>
+		</page>
+	</content>
+</document>

@@ -1,0 +1,920 @@
+/*
+STYLE.CSS version 20030507/15:00 [joe]
+colors used by bechtle.com
+
+bechtle green:										#00A973;
+background gradient from (left):				#B1E4D3;
+background gradient to (right):				#00A973;
+ticker background gradient from (left):	#D8F2E9;
+ticker background gradient to (right):		#8AD7BC;
+submenu background:								#E7FAF2;
+link arrow:											#ED2040;
+text in taskbar:									#0C583F;
+
+*/
+
+
+/* in alphabetic order... (please keep in!) */
+
+a
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #00A973;
+}
+
+a:active
+{
+	color: #00A973;
+}
+
+abstract, .abstract
+{
+	display: block;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+anker {
+	color: red;
+	text-decoration: none;
+	background-image: url("/_rsc/bitflux/images/anchor.gif");
+	background-repeat:no-repeat;
+	background-position:left;
+	padding-left: 10px;
+}
+
+.anker {
+	color: #00A973;
+	font-weight: bold;
+}
+
+ankerlink, .ankerlink {
+	color: #00A973;
+	text-decoration: underline;
+}
+
+article, .article
+{
+    display: block;
+	margin: 0;
+	margin-bottom: 1em;
+	padding-right: 1em;
+}
+
+block, .block
+{
+	margin: 0;
+	padding-right: 1em;
+	vertical-align: top;
+}
+
+block[layout="col"], .block[layout="col"]
+{
+	display: block;
+}
+block[align="right"], .block[layout="right"]
+{
+	text-align: right;
+}
+block[align="center"], .block[layout="center"]
+{
+	text-align: center;
+}
+
+block[layout="row"], .block[layout="row"]
+{
+	display: table-cell;
+}
+
+body
+{
+	border: 0px;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	margin: 0px;
+	padding: 0px;
+    margin-top: 50px;
+}
+
+body.border-left
+{
+	background-color: #F0F0F0;
+}
+
+body.border-right
+{
+	background-color: #F0F0F0;
+}
+
+body
+{
+	background-image: url("../images/cont/background.logo.big.gif");
+}
+
+body.info
+{
+	background-image: url("../images/info/background.gif");
+}
+
+body.submenu
+{
+	background-image: url("../images/submenu/background.gif");
+}
+
+body.taskbar
+{
+	background-image: url("../images/taskbar/background.gif");
+	text-align: right;
+}
+
+body.topmenu
+{
+	background-image: url("../images/topmenu/background.gif");
+}
+
+bold, .bold, b
+{
+	font-weight: bold;
+}
+
+.claim
+{
+	color: #00A973;
+	font-weight: bold;
+	font-style: italic;
+}
+
+collection, .collection
+{
+    display: block;
+	margin: 0;
+	padding-right: 1em;
+}
+
+contentbody
+{
+	display: block;
+	border: 0px;
+	margin: 0px;
+}
+
+div
+{
+	display: block;
+}
+
+docnote
+{
+	color: #a00000;
+	border: 1px solid #000000;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+docnotes
+{
+	color: #a00000;
+	display: block;
+	margin-left: 2em;
+}
+
+
+document {
+	border: 0px;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	margin: 0px;
+}
+
+download, .download
+{
+	text-decoration: underline;
+	background-image: url("../images/cont/icon_download.gif");
+	background-position:left;
+	background-repeat:no-repeat;
+	padding-left: 10px;
+}
+
+elink, .elink
+{
+	text-decoration: underline;
+}
+
+email, .email
+{
+	text-decoration: underline;
+}
+
+emphasis, emphasize, .emphasize, i
+{
+	font-style: italic;
+}
+
+form
+{
+	margin: 0;
+	padding: 0;
+}
+
+headerlabel
+{
+	display: block;
+	font-style: italic;
+	padding-top: 1em;
+}
+
+input
+{
+	margin: 0;
+	padding: 0;
+}
+
+
+ilink, .ilink
+{
+	text-decoration: underline;
+}
+
+ilink[class="slink"]
+{
+	display: block;
+	font-size: 11px;
+}
+
+.image
+{
+	border-top: 1px solid #dcdcdc;
+	border-left: 1px solid #dcdcdc;
+	border-right: 2px solid #606060;
+	border-bottom: 2px solid #404040;
+}
+
+img
+{
+	border: 0px;
+}
+
+.infoticker
+{
+	color: #00A973;
+}
+
+itemizedlist, orderedlist, ul, ol
+{
+	display: block;
+	margin-bottom: 0.5em;
+	padding-left: 2em;
+}
+
+itemizedlist, ul
+{
+	list-style-type: square;
+}
+
+itemizedlist[bulletin=none], ul[bulletin=none]
+{
+	padding-left: 0px;
+}
+
+itemizedlist bxlistitem, ul li
+{
+	display: list-item;
+	list-style-type: square;
+}
+
+itemizedlist[bulletin=none] bxlistitem, ul[bulletin=none] li
+{
+	display: list-item;
+	list-style-type: none;
+}
+
+.formnormal {
+	color : black;
+}
+
+keywords, .keywords
+{
+	display: block;
+	margin-left: 2em;
+}
+
+media
+{
+	display: block;
+	margin: 0;
+}
+
+media-caption, .media-caption
+{
+	color: #404040;
+	border-left: 1px solid #dcdcdc;
+	border-bottom: 1px solid #dcdcdc;
+	display: block;
+	font-size: 10px;
+	margin: 0;
+}
+
+news, .news
+{
+	display: block;
+	border: 1px solid #00A973;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+
+orderedlist, ol
+{
+	list-style-type: decimal;
+}
+
+orderedlist bxlistitem, ol li
+{
+	display: list-item;
+	list-style-type: decimal;
+}
+
+page, .page
+{
+    display: block;
+	margin: 0;
+	padding-right: 1em;
+	margin-top: 1em;
+}
+
+para, .para, p
+{
+	display: block;
+	margin: 0;
+	margin-bottom: 0.5em;
+}
+
+/*
+para:first-line, p:firstline
+{
+	padding-left: 1em;
+}
+*/
+
+paraheadline, .paraheadline
+{
+	color: #00A973;
+	display: block;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 0.5em;
+}
+
+
+
+path
+{
+	display: block;
+	font-size: 11px;
+	margin-left: 2em;
+}
+
+schemainfo, .schemainfo {
+	color: #d00000;
+	display: block;
+	font-style: italic;
+}
+
+shorttitle, .shorttitle
+{
+	color: #a00000;
+	display: block;
+	font-size: 11px;
+	margin-left: 2em;
+}
+
+
+spacer, nowrap
+{
+	text-decoration: overline;
+	white-space: nowrap;
+}
+.nowrap
+{
+	white-space: nowrap;
+}
+
+spacer
+{
+	color: #d0d0d0;
+}
+
+.spacer
+{
+	color: #ffffff;
+	white-space: nowrap;
+}
+
+spacer[display="line"], .spacer[display="line"]
+{
+	display: block;
+}
+
+spacer[display="visibleline"], .spacer[display="visibleline"], hr
+{
+	background-image: url("../images/cont/visibleline.gif");
+	display: block;
+	width: 100%;
+}
+.visibleline
+{
+	background-image: url("../images/cont/visibleline.gif");
+	display: block;
+	width: 100%;
+	color: #ffffff;
+	white-space: nowrap;
+}
+
+subscript, sub
+{
+	font-size: .83em;
+	vertical-align: sub;
+}
+
+subs
+{
+	display: block;
+	font-size: 11px;
+	margin-left: 2em;
+}
+
+superscript, sup
+{
+	font-size: .83em;
+	vertical-align: super;
+}
+
+system
+{
+	background-color: #a00000;
+	border: 1px solid #000000;
+	border-style: inset;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+table
+{
+	border-spacing: 0px;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	vertical-align: top;
+	border:thin;
+}
+
+/*
+td
+{
+	text-align: eval(attr(align));
+	vertical-align: eval(attr(valign));
+}
+*/
+
+.td-center
+{
+	    text-align: center;
+    	vertical-align: top;
+}
+
+table.cc_navigator td
+{
+	border-top: 1px solid #00A973;
+	border-collapse:collapse;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.cc_navigator td.cc
+{
+	background-color: #E7FAF2;
+}
+
+table.competencecenter td
+{
+	border-top: 1px solid #00A973;
+	border-collapse:collapse;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.competencecenter td.label
+{
+	background-color: #E7FAF2;
+}
+
+table.competencecenter td.cctitle
+{
+	background-color: #E7FAF2;
+	color: #00A973;
+	font-weight: bold;
+}
+
+table.previewheader
+{
+	border: 1px solid #cc0000;
+	border-collapse: collapse;
+	background-color: #ffffff;
+}
+table.previewheader td
+{
+	font-size: 8px;
+	color: #000000;
+	padding-left: 2px;
+	vertical-align: top;
+}
+
+table.taskbar td
+{
+	color: #00A973;
+}
+
+table.taskbar td.text
+{
+	padding-left: 4px;
+}
+
+table.taskbar td.text a
+{
+	color: #00A973;
+}
+
+table.taskbar td.text a:hover
+{
+	color: #00A973;
+}
+
+table.taskbar td.text a:active
+{
+	color: #000000;
+}
+
+table.topmenu td
+{
+	font-style: italic;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+table.topmenu td.inactive
+{
+	color: #000000;
+}
+
+table.topmenu td.inactive-spacer
+{
+	background-image: url("../images/topmenu/lasche.inaktiv.trenner.gif");
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+table.topmenu td.active
+{
+	background-color: #FFFFFF;
+	color: #00A973;
+}
+
+table.topmenu td.active a
+{
+	color: #00A973;
+}
+
+table.topmenu td.active-spacerleft
+{
+	background-image: url("../images/topmenu/lasche.aktiv.links.gif");
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+table.topmenu td.active-spacerright
+{
+	background-image: url("../images/topmenu/lasche.aktiv.rechts.gif");
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+table.submenu td
+{
+	padding-bottom: 1px;
+	padding-top: 1px;
+	vertical-align: middle;
+}
+
+table.submenu td.text
+{
+	background-color: #F3FFFB;
+	border-top: 1px solid #D7E7E2;
+	border-bottom: 1px solid #FFFFFF;
+	padding-right: 1px;
+	text-align: right;
+}
+
+table.submenu td.text-first
+{
+	border-bottom: 1px solid #00A973;
+	color: #00A973;
+	padding-right: 1px;
+	text-align: left;
+}
+
+table.submenu td.text-last
+{
+	background-image: url("../images/submenu/menueshadow.gif");
+	background-repeat: repeat-x;
+	border-top: 1px solid #00A973;
+	color: #00A973;
+	padding-right: 1px;
+	text-align: left;
+}
+
+table.submenu td.icon
+{
+	background-image: url("../images/link.arrow.right.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-left: 1px;
+	text-align: left;
+}
+table.submenu td.icon2
+{
+	background-image: url("../images/link.arrow.down.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-left: 1px;
+	text-align: left;
+}
+
+table.systemhouse td
+{
+	border: 1px solid #00A973;
+	border-collapse:collapse;
+	padding: 1em;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.systemhouse td.shtitle
+{
+	background-color: #E7FAF2;
+}
+
+td
+{
+	font-size: 11px;
+}
+
+th
+{
+	font-size: 11px;
+}
+
+elf
+{
+	border: 1px solid #00A973;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+elfx, elfxb
+{
+	border: 1px solid #d00000;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+elfxb
+{
+	display: block;
+}
+
+eltb
+{
+	display: block;
+	border: 1px solid #00A973;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+
+title, .title
+{
+	color: #00A973;
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+	font-style: italic;
+	line-height: 15px;
+	margin-top: 1em;
+}
+/* X specifix addons for forms */
+/* *************************************** */
+.EMPTY{
+ color: red;
+}
+
+.VALID{
+	color: black;
+}
+
+.INVALID{
+	color: red;
+}
+
+.invalid{
+	color: red;
+}
+
+.TOLONG{
+	color: red;
+}
+
+.TOSHORT{
+	color: red;
+}
+
+.NOTAPHANUMMERIC{
+	color: red;
+}
+
+/* **************** end form ************* */
+
+/* X specifix addons for content objects */
+/* *************************************** */
+
+/* XML tables -- in logical order */
+
+	informaltable tgroup
+	{
+		display: table;
+	}
+
+	tbody
+	{
+		display: table-row-group;
+	}
+
+	row
+	{
+		display:   table-row;
+	}
+
+
+	td
+	{
+		display: table-cell;
+
+	}
+
+/* END OF XML tables */
+
+
+/* addition rendering attributes for content objects */
+/* like borders and such things */
+
+	body.cont
+	{
+		/* we need overriding of gif-url for body background */
+		background-image: url("../images/cont/background.logo.big.gif");
+		margin-left: 20px;
+	}
+
+	article {
+		display: table;
+		border-bottom: 1px dotted #40ff40;
+		border-right: 1px solid #000000;
+		border-top: 1px dotted #404040;
+	}
+
+	block  {
+		border-bottom: 1px dotted #B1E4D3;
+		border-right: 1px solid #00A973;
+		border-top: 1px dotted #B1E4D3;
+	}
+
+	collection  {
+	    display: table;
+		border-bottom: 1px dotted #808080;
+		border-right: 1px solid #8080ff;
+		border-top: 1px dotted #808080;
+	}
+
+	informaltable td, td.informaltable {
+		border-right: 1px dashed #a0a0a0;
+		border-bottom: 1px solid #a0a0a0;
+		padding-top:2px;
+		padding-left:2px;
+		padding-bottom:2px;
+		padding-right:5px;
+	}
+	informaltable[borderlines=no] td, table.informaltable[borderlines=no] td.informaltable {
+		border-right: 0px;
+		border-bottom: 0px;
+	}
+
+	informaltable row:first-child, table.informaltable tr:first-child {
+		font-weight: bold;
+	}
+	informaltable[colheaders=no] row:first-child, table.informaltable[colheaders=no] tr:first-child {
+		font-weight: normal;
+	}
+
+	page {
+		border-bottom: 1px dotted #000000;
+		border-right: 1px solid #ff0000;
+		border-top: 1px dotted #000000;
+	}
+
+/* END OF BX specifix addons */
+
+/*XPOSE chsrt*/
+chart-xpose {
+	color: red;
+}
+
+/*------------------------------*/
+/* Button section*/
+.cssbutton {
+	background: #fff;
+	padding: 1px;
+	font-size: x-small;
+	border : 1px solid #aaa;
+}
+.buttonleft {
+	color: #f8f8f8;
+	background: #a42;
+	padding: 0px 3px 0px 3px;
+}
+.buttonright {
+	color: #f8f8f8;
+	background: #886;
+	padding: 0px 20px 0px 3px;
+}
+
+/* administration */
+
+.bg {
+	background-color:gray;
+}
+.button {
+	font-size:7pt;
+}
+.error {
+	color:#FF0000;
+	border-color:#FF0000;
+	border-width:2px;
+	border-style:solid;
+	padding:4px;
+	text-align:center;
+}
+.red {
+	color:#FF0000;
+}
+.border {
+	border-width:thin;
+	border-style : hidden;
+}
+.text {
+	background-color: #E7FAF2;
+}
+.groupform {
+
+    width:120px;
+}
+.uservalid {
+	color:#0000FF;
+	border-color:#0000FF;
+	border-width:2px;
+	border-style:solid;
+	padding:4px;
+	text-align:center;
+}
+.userlink {
+	color:blue
+}
+.notready {
+	color:#FF00FF;
+	border-color:#FF00FF;
+	border-width:2px;
+	border-style:solid;
+	padding:4px;
+	text-align:center;
+}
+.groupbutton {
+	font-size:10pt;
+}
+

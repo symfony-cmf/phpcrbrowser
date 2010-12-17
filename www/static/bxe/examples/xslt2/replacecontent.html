@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content=
+"HTML Tidy for Mac OS X (vers 1st August 2003), see www.w3.org" />
+<title></title>
+<script>
+function foo() {
+
+var initialnode = window.opener.bxe_lastNode;
+
+var xmldoc= window.opener.bxe_config.doc;
+
+initialnode._node.removeAllChildren();
+initialnode._node.appendChild(xmldoc.createTextNode("test test"));
+
+window.opener.bxe_Transform();
+}
+</script>
+</head>
+<body>
+
+<a href="javascript:foo()">foo</a>
+
+</body>
+</html>

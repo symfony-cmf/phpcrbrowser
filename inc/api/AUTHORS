@@ -1,0 +1,19 @@
+Initial authors and maintainer of Okapi:
+Silvan Zurbruegg (silvan@liip.ch)
+
+Contributors:
+- Christian Stocker
+- Reto Gassmann
+- Patrice Neff 
+- Marc Ammann
+- Philipp Stucki
+- Tobias Ebnöther
+- Lukas K. Smith
+- Alain Petignat
+
+
+Crucial idea for naming this framework `Okapi' by Hannes Gassert.
+
+Okapi includes code and concepts from 
+Flux-CMS (http://www.flux-cms.org). Many thanks
+to the respective authors! 

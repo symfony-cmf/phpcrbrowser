@@ -1,0 +1,71 @@
+#cccontainer {
+}
+
+#cccontainer a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ccresult {
+}
+
+.ccjsdisabled {
+    background-color: #FF0000;
+}
+
+.ccright {
+    float: right;
+}
+
+ul#ccresults {
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul#ccresults li {
+    border-bottom: 1px solid #dee0df;
+    margin: 0;
+    padding: 7px 0 7px;
+    line-height: 20px;
+}
+
+#cccontainer img {
+    border: 0px !important;
+}
+
+ul#ccresults li .info {
+    font-size: x-small;
+    margin-left: 5px;
+}
+
+ul#ccresults li .testname {
+    font-weight: bold;
+}
+
+#ccresultsform fieldset {
+    border: 1px solid #dee0df;
+}
+
+#ccresultsform label {
+    display: block;
+}
+
+#ccresultsform select,  #ccresultsform input, #ccresultsform textarea {
+    border: 1px solid #aaaaaa;
+    width: 100%;
+}
+
+input.haserror {
+    border: 2px solid #ffbbbb !important;
+}
+
+.dasgseetmernoed {
+    display: none;
+}
+
+label.error {
+    color: #bb1111;
+    font-size: x-small;
+    font-weight: bold;
+}

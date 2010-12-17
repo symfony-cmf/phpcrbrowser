@@ -1,0 +1,22 @@
+#ng_bitflux_org, body {
+  background-color: #ffffff;
+  font-size: xx-small;
+  font-family:  Arial,Verdana, SunSans-Regular, Sans-Serif;
+  color:#222;
+  padding:0px;
+  margin: 0px;
+}
+
+h2 {
+    font-size: x-small;
+}
+
+.post_tags, .post_related_entries, #banner, #right {
+    display: none;
+}
+
+#mobile {
+    display: block !important;
+    font-weight: bold;
+    padding-bottom: 10px;
+}

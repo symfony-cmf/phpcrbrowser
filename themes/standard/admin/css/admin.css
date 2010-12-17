@@ -1,0 +1,78 @@
+@import "editpopup.css";
+
+body {
+    padding:0px;
+    margin:0px;
+    background-color:#ffffff;
+    font-size:10px;
+    font-family: Verdana, Helvetica, sans-serif;
+    color: black;
+}
+
+.greennavi {
+    background-color:#f3f3f3;
+    padding: 10px;
+    padding-left: 0px;  
+    color:#000000;
+    width:100%;
+    height:20px;
+}
+
+.greennavi a { color:#000; text-decoration:none; }
+.greennavi a:hover { color:#000; text-decoration:none; }
+.greennavi a:visited { color:#000; text-decoration:none; }
+.greennavi form {
+    margin:0px;
+    padding:0px;
+}
+
+.greennavi select {
+   margin: 0px 20px 0px 5px;
+   font-size:10px;
+   width:150px;
+}
+
+.logout {
+    padding:0px 30px 0px 10px;    
+} 
+
+.logout a, .logout a:visited {
+    text-decoration: underline;
+}
+
+.logo {
+    background-color:#0C0;
+    text-align:right;
+    padding:0px 5px 0px 5px;
+}
+
+#admincontent {
+    padding:5px 15px 5px 15px;
+}
+.browserWarning, .browserWarningRed {
+   
+    
+  
+    padding: 5px;
+    width: 400px;
+    position: absolute;
+    top: 14px;
+    left: 320px;
+    height: 28px;
+    
+    font-size: 9px;
+    border: 1px solid black;
+}
+
+.browserWarningRed {
+     background-color: #FF6060;
+}
+
+#LSResult { background-color: #006486;
+    color: #ffffff;
+    border: 1px solid #000000;
+    padding: 1px 10px;
+    margin-left: 10px;
+    display: none;
+    
+}

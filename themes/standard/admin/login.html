@@ -1,0 +1,207 @@
+<?php
+
+if (!empty($_GET['back'])) {
+    //remove path from BX_WEBROOT from back (for subdir installations);    
+    $urlp = parse_url(BX_WEBROOT);
+    if (isset($urlp['path'])) {
+      $_GET['back'] = preg_replace("#^/*".$urlp['path']."#","",$_GET['back']);  
+    }
+    //remove webroot and add it again, so that we don't get redirected to something else..
+    
+    $_GET['back'] = BX_WEBROOT. preg_replace("#^".BX_WEBROOT."#",'',$_GET['back']);
+
+    $_GET['back'] = preg_replace("#.loginerror=1#",'',$_GET['back']);
+        
+}
+
+
+if (!empty($_POST) && isset($_POST['username'])) {
+    if (!empty($_GET['back'])) {
+        if (strpos($_GET['back'],'?') === false) {
+            $_GET['back'] .= '?loginerror=1';
+        } else {
+            $_GET['back'] .= '&loginerror=1';
+        }    
+        header("Location: ".$_GET['back']);
+    } else {
+        $error = '<label>&#160;</label><p style="color: red;">'.$GLOBALS['POOL']->i18nadmin->translate('Wrong login or password.').'</p>';
+    }
+} else {
+    $error = '';
+}
+        
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html >
+<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		
+
+<title>Flux CMS Admin - Login</title> 
+<?php 
+$tablePrefix =  $GLOBALS['POOL']->config->getTablePrefix();
+$i = 0;
+$query = "select service from ".$tablePrefix."userauthservices group by service";
+$res = $GLOBALS['POOL']->db->query($query);
+if (MDB2::isError($res)) {
+} else {
+	while($row = $res->fetchRow(MDB2_FETCHMODE_ASSOC)) {
+		$services[$i] = $row['service'];
+		$i++;
+	}
+}
+    echo '<link rel="stylesheet" type="text/css" href="'.BX_WEBROOT.'themes/standard/admin/css/head.css" media="screen"/>';
+    echo '<link rel="stylesheet" type="text/css" href="'.BX_WEBROOT.'themes/standard/admin/css/login.css" media="screen"/>';
+
+if(isset($services) && isset($service)) {
+echo '<script typ="text/javascript">
+function service() {
+	var service = document.getElementById("authservice").value;
+	switch(service) {
+		case "openid":	document.forms.login.action="/admin/webinc/auth/openid/index.php";
+		break;
+		default:	"";
+		break;
+	}
+}
+</script>';
+} else {
+echo '
+<script typ="text/javascript">
+function service() {
+	document.forms.login.submit();
+}
+</script>
+';
+}
+if(isset($services)) {
+echo '
+<script typ="text/javascript">		
+		function changed() {
+			var service = document.getElementById("authservice").value;
+			if(service != "Fluxcms") {
+				document.getElementById("pwd").style.visibility = "hidden";
+				document.forms.login.action = "/admin/webinc/auth/openid/index.php";
+			}
+			if(service == "Fluxcms") {
+				document.getElementById("pwd").style.visibility = "";
+			}
+		}
+</script>
+';
+}
+?>
+
+</head> 
+
+<body onload="document.forms.login.username.focus();">
+<div id="top"><p class="logo">Flux CMS</p> <?php print '<a href="'.BX_WEBROOT.'" class="logolink">'. htmlspecialchars( bx_helpers_config::getOption('sitename')).'</a>';?>
+<br class="clr"/></div>
+<div id="container" >
+<?php 
+        $i18n = $GLOBALS['POOL']->i18nadmin;
+        $perm = bx_permm::getInstance();
+        $username = $perm->getUsername();
+      
+            
+        
+        
+        if ($username) {
+        
+            print "You're already logged in as " .$username.".<p/>";
+            print "This almost certainly means, that you're not allowed to view this page.<br/>";
+            print "Use the logout button link below, if you want to login as another user.<br/>";
+            print '<a href="?logout">Logout</a><br/>';
+        } 
+        else {
+            if (isset($_GET['back']) && $_GET['back']) {
+                print '<form name="login" method="post" action="'.htmlspecialchars($_GET['back']).'">';
+            } else {
+	      print '<form method="post" action="'.BX_WEBROOT.'admin/'. preg_replace("#^http.+/admin/(.*)$#","$1", str_replace("?logout","",htmlspecialchars(bx_helpers_uri::getRequestUri()))).'" name="login">';
+            }
+              
+
+print <<<EOT
+ 
+              <fieldset>
+		<legend>
+EOT;
+       
+    echo '<img alt="" src="';
+    echo BX_WEBROOT;
+    echo 'themes/standard/admin/images/schloss.jpg"/>';
+    $title = $GLOBALS['POOL']->i18nadmin->translate('Welcome to Flux CMS');
+    $user = $GLOBALS['POOL']->i18nadmin->translate('Username:');
+    $pwd = $GLOBALS['POOL']->i18nadmin->translate('Password:');
+    $lost = $GLOBALS['POOL']->i18nadmin->translate('Lost your password?');
+    $newone = $GLOBALS['POOL']->i18nadmin->translate('Get a new one.');
+    $remember = $GLOBALS['POOL']->i18nadmin->translate('Remember me:');
+	$authservices = $GLOBALS['POOL']->i18nadmin->translate('Auth Services:');
+
+    
+    
+print <<<EOT
+
+        Admin Login  </legend>
+	   <label>&#160;</label><p>$title</p>
+       $error
+<label>$user</label> <input name="username" type="text" class="input"/>
+  
+EOT;
+  if (isset($services)) {
+  		print <<<EOT
+		<br /><br />
+		<label>$authservices</label> 
+		<select name="authservice" id="authservice" onChange="changed();">
+EOT;
+		
+		foreach($services as $service) {
+			  print <<<EOT
+			  <option type="text">$service</option>
+EOT;
+		}
+		print <<<EOT
+		<option type="text" selected="selected">Fluxcms</option>
+	    </select>
+		<br/>
+EOT;
+   }
+   print <<<EOT
+  <br />
+  <div id="pwd">
+  <label>$pwd</label> <input name="password" type="password" class="input"/>
+  </div>
+  <br/>
+<label>$remember</label> <input name="remember" type="checkbox"/>
+
+  <br />
+    <label>&#160;</label>  <input type="submit" value="Submit" onsubmit="service();return false;" name="submitButton"/>
+  <br />
+  
+  <br /><br />
+      <label>&#160;</label>		<p>$lost <a href="./webinc/lostpw/">$newone</a></p>
+	
+	  
+	</fieldset>
+      </form>
+EOT;
+     }
+ 
+ 
+?>
+ <p class="version">
+ <a href="http://www.flux-cms.org"><b>Flux CMS</b></a> Version: <?php echo BXCMS_VERSION.'/'.BXCMS_BUILD_DATE; ?><br />
+ Free Software released under the GNU/GPL License</p>
+
+</div>
+
+
+
+   
+ </body>
+ </html>
+
+
+

@@ -1,0 +1,68 @@
+#editpopuplink {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid;
+    width: 150px;
+    height: 20px;
+    background-color: #FFFFFF;
+    color: #333333;
+    padding: 0px;
+    font-weight: bold;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+}
+#editpopuplink p {
+   margin: 2px 0px 0px 8px;
+}
+
+
+#editpopuplink a { color: #333333; 
+text-decoration: none;
+}
+#editpopuplink a:hover { color: #008800; }
+
+#editpopup {
+    position: absolute;
+    top: 21px;
+    left: 5px;
+    border: 1px solid;
+    width: 200px;
+    height: auto;
+    visibility: hidden;
+    color: #333333;
+    padding: 0px;
+    background-color: #FFFFFF;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px;
+}
+
+#editpopup p {
+    vertical-align: middle;
+    text-align: left; 
+    padding: 1px 1px 1px 8px;
+    margin: 0px 0px 0px 0px;
+}
+#editpopup p:hover {
+    background-color: #DDDDDD;
+}
+#editpopup .menuentry {
+    border-bottom: 0px solid;
+    font-weight: bold;
+}
+
+#editpopup .menuseparator {
+    height: 1px;
+    border-bottom: 1px solid;
+    padding: 0px;
+    background-color: #DDDDDD;
+}
+
+.menuentry a { color: #333333;
+    text-decoration: none;
+ }
+.menuentry a:hover {
+    color: #008800;
+    text-decoration: underline;
+}
+

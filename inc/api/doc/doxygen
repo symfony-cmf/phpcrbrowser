@@ -1,0 +1,61 @@
+# Doxyfile 1.5.4
+# This file describes the settings to be used by the documentation system
+# doxygen (www.doxygen.org) for a project
+#
+# Check http://www.stack.nl/~dimitri/doxygen/config.html for information.
+
+#---------------------------------------------------------------------------
+# Project related
+#---------------------------------------------------------------------------
+PROJECT_NAME           = Okapi
+OUTPUT_DIRECTORY       = doc
+JAVADOC_AUTOBRIEF      = YES
+DETAILS_AT_TOP         = YES
+INHERIT_DOCS           = YES
+TAB_SIZE               = 4
+
+#---------------------------------------------------------------------------
+# Build related
+#---------------------------------------------------------------------------
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+HIDE_IN_BODY_DOCS      = NO
+SHOW_USED_FILES        = NO
+SHOW_DIRECTORIES       = YES
+INTERNAL_DOCS          = YES
+
+#---------------------------------------------------------------------------
+# Log levels
+#---------------------------------------------------------------------------
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+#---------------------------------------------------------------------------
+# Input
+#---------------------------------------------------------------------------
+INPUT                  = .
+FILE_PATTERNS          = *.php README
+RECURSIVE              = YES
+EXCLUDE                = vendor
+EXCLUDE_SYMLINKS       = YES
+EXCLUDE_PATTERNS       = 
+
+#---------------------------------------------------------------------------
+# Output
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+#---------------------------------------------------------------------------
+# Output
+#---------------------------------------------------------------------------
+# config - all configuration values that Okapi recognizes
+ALIASES += "config=\xrefitem configurations \"Configuration value\" \"Configuration values\""
+ALIASES += "define=\xrefitem defines \"Global constant\" \"Global constants\" \b"
+
+#---------------------------------------------------------------------------
+# Input filter for README files
+#---------------------------------------------------------------------------
+FILTER_PATTERNS        = *README*="doc/readme_filter.sh"

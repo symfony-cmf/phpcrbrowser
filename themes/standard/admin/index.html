@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Flux CMS Admin</title>
+<script src="admin/webinc/js/frameset.js">
+</script>
+<script src="webinc/js/bx/i18n.js">
+</script>
+<script src="webinc/js/bx/helpers.js">
+</script>
+<script src="webinc/js/sarissa_0.9.9.4.js">
+</script>
+</head>
+<frameset
+ onload="framesetloaded()" 
+rows="50,*" framespacing="0" frameborder="0" border="0" bordercolor="#ffffff">
+    <frame name="header" src="./webinc/formnavi.php" noresize="noresize" scrolling="no"/>
+    
+    <frameset cols="250,*" frameborder="1"  bordercolor="#C4FCB7" border="1">
+        <frame name="navi" src="./navi/" scrolling="auto" />
+        <frame name="edit" src="../themes/standard/admin/blank.html"  />
+
+    </frameset>
+<noframes>
+<body >
+you need frames...
+</body>
+</noframes>
+</frameset>
+</html>

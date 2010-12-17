@@ -1,0 +1,48 @@
+@import url(main.css);
+
+
+
+
+#left, #language, #metanavi, #footer, .blog_pager{
+	
+	display: none;	
+}
+
+
+.post_links{
+display: none;	
+	
+}
+
+
+h1 {
+	border-bottom: 1px solid;
+    margin: 0px 0px 7px 0px;
+    padding: 10px 0px 14px 0px;
+}
+
+
+#content h1, #content .post_title {
+    margin: 0px 0px 7px 0px;
+    padding: 10px 0px 2px 0px;
+}
+
+#content a.ext {
+background-image: none;
+    padding-left:0px;
+    background-position: center left;
+}
+
+#content a.mail {
+background-image: none;
+    padding-left: 0px;
+    background-position: center left;
+}
+
+#content a.pdf {
+    background-image: none;
+    padding-left: 0px;
+    background-position: center left;
+}
+
+

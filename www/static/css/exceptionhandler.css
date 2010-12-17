@@ -1,0 +1,31 @@
+/* Tables general */
+table, td, th {
+    border-collapse: collapse;
+}
+table thead {
+    background-color: #6C5E6C;
+    color: #e9e9e9;
+}
+th {
+    font-weight: bold;
+    padding: 5px 2px;
+}
+
+/* Exception details */
+h2 {
+    background-color: #D6D0DE;
+    padding: 4px;
+}
+tr.exceptionInfo {
+    background-color: #D6D0DE;
+}
+tr.exceptionCode {
+    background-color: #DDE4EF;
+}
+tr.exceptionCode pre {
+    margin: 0;
+    padding: 0;
+}
+tr.exceptionCode td.caller {
+    border: 1px solid #ff3300;
+}

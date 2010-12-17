@@ -1,0 +1,109 @@
+/*  css for FLUX-CMS by madame monorom 2005 www.intensivstation.ch  */
+
+/*  body und schrift deffinitionen */
+body {
+background-color: #ffffff;
+font-size: 12px;
+font-family: "Trebuchet MS", Lucida,Geneva, Arial, Helvetica, SunSans-Regular, sans-serif;
+color:#000000;
+padding:0px;
+margin:0px;
+}
+
+form {
+margin:0px;
+padding: 0px;
+}
+input, textarea { 
+background-color: #f3f3f3;
+border: 1px solid #555555; 
+color: #000000;
+font-size: 11px; 
+margin-top:5px;
+padding: 2px;
+}
+
+.input {
+	width: 150px;
+}
+
+label	{
+width: 130px;
+float: left;
+line-height: 200%;
+clear: left;
+}
+
+input:focus, input:hover, textarea:focus, textarea:hover {
+background-color: #ffffff;
+border: 1px solid #006486;
+}
+
+a { 
+color: #006486;
+text-decoration: none; 
+}
+a:visited {color:#006486;}
+a:hover {color: #006486; text-decoration: underline;}
+a:active { color:#000000;}
+ 
+
+/*positioning-layers */
+
+#top {
+background-color: #006486;
+font-family: "Trebuchet MS", Lucida,Geneva, Arial, Helvetica, SunSans-Regular, sans-serif;
+font-size: 12px;
+color: #ffffff;
+font-weight: bold;
+margin: 0px;
+padding: 1px 10px;
+}
+
+#top p.logo {
+float:right;
+margin: 0px;
+padding: 0px 0px;
+letter-spacing:8px;
+}
+.clr{
+clear: right;}
+
+#container {
+width: 500px;
+margin: 80px 0px;
+margin-left: auto;
+margin-right: auto;
+padding: 0px;
+}
+
+fieldset {
+margin: 0px;
+padding:  30px;
+border: #555555 solid 2px;
+border-left: #555555 solid 1px;
+border-top: #555555 solid 1px;
+}
+
+legend {
+text-transform: uppercase;
+padding: 0px 4px;
+color: #555555;
+color: #006486;
+font-size: 15px;
+font-weight: bold;
+letter-spacing: 0.1em;
+}
+
+legend img{
+vertical-align:middle;
+}
+
+p.version{
+margin: 50px 0px 0px 0px;
+padding: 0px;
+color: #555555;
+line-height: 17px;
+text-align:right;
+
+}

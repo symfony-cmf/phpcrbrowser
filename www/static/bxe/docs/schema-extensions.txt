@@ -1,0 +1,71 @@
+****************************************************************
+* See http://wiki.bitfluxeditor.org/BXE_2.0/RelaxNGEnhancement *
+* for a more up-to-date version of this Document               *
+****************************************************************
+
+Namespace:
+    xmlns:bxe="http://bitfluxeditor.org/schema/2.0"
+    
+    
+"Nice" Names:
+    (works, there may be places, where it isn't implemented yet and not for attributes yet)
+    <bxe:name>Title</bxe:name>
+        
+Automatic Next Element On Return
+    
+    <element name="h1">
+        <bxe:nextelement>p</bxe:nextelement>
+    </element>
+    
+
+Default Content
+    
+    Default Content, which will be added, if such an element is newly created
+    
+    <bxe:defaultcontent [type="function"]>Some Content or function</bxe:defaultcontent>
+ 
+Default Value for Attributes
+    
+    <bxe:defaultcontent>value</bxe:defaultcontent>
+
+Add Menu entry
+
+    <bxe:menuentry type="seebelow" name="Text for menu entry">value</bxe:menuentry>
+    
+    type="popup": calls a popup with the url defined in the textnode
+    type="function": calls the function defined in the textnode
+    
+On New Callback (the same as in the old config.xml, will be called, if a new element is inserted)
+    ( for attributes (only function-type is supported))
+    
+    <bxe:onnew type="seebelow" >value</bxe:onnew>
+    
+    type="popup": calls a popup with the url defined in the textnode
+    type="function": calls the function defined in the textnode
+    
+Attribute selector
+    Offers a [ ... ] box in "Edit Attributes.." instead of just a textfield 
+    
+    <bxe:selector type="seelbelow">value</bxe:selector>
+    type="popup": calls a popup with the url defined in the textnode
+    type="function": calls the function defined in the textnode
+    
+Includes 
+
+    calls after the xslt transformation the mentioned URL. has to return a valid XML Document.
+    
+        <option name="serverIncludeFunction">cope2_serverIncludeURL</option>
+        <option name="serverIncludeElement">include</option>
+    
+    calls the function defined in serverIncludeFunction, which should return an URL.
+    
+Don't Show in context menu
+    Like in old config.xml. Works for attributes and elements
+    
+    <bxe:dontshow/>
+    
+Not Editable
+    (works not for subelements)
+
+    <bxe:noteditable/>
+    

@@ -1,0 +1,34 @@
+.error {
+    font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif;
+    font-size: 12px;
+    background-color: #009900;
+    border: 1px black dotted;
+    z-index: 50;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    top: auto;
+    color: #ffffff;
+    opacity: 1;
+    -moz-opacity: 1;
+}
+
+.error:hover {
+    opacity: 1;
+    -moz-opacity: 1;
+}
+
+.errorTitle {
+    font-weight: bold;
+}
+
+.errorReport {
+}
+
+.error a {
+    color: #cccccc;
+}
+
+.error hr {
+    display: none;
+}

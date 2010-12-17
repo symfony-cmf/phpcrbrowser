@@ -1,0 +1,31 @@
+#ng_bitflux_org, body {
+	font-size: large;
+}
+
+#claim {	
+    font-size: 12px;
+}
+
+.post_links, .post_related_entries {
+	font-size: 13px;
+}
+
+.post_meta_data {
+	font-size: 13px;
+}
+
+.post_tags {                         
+	font-size: 13px;
+}
+
+#content div#address {
+    font-size: 13px;
+}
+
+#content div#address p {
+    font-size: 13px;
+}
+
+.teamspace {
+    height:140px;
+}

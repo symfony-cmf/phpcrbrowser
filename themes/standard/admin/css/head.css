@@ -1,0 +1,81 @@
+/*  css for FLUX-CMS by monorom 2005 www.intensivstation.ch  */
+
+/*  body und schrift deffinitionen */
+body {
+background-color:#f3f3f3;
+font-size: 10px;
+font-family: Verdana, Geneva, Arial, Helvetica, SunSans-Regular, sans-serif;
+color:#000000;
+padding:0px;
+margin:0px;
+}
+form {
+margin:0px;
+padding:0px;
+}
+a { 
+color: #006486;
+text-decoration: none;
+font-weight: bold;
+}
+a:visited {color:#006486;}
+a:hover {color: #990066;}
+a:active { color:#006486;}
+
+
+/*positioning-layers statisch und absolut */
+#top {
+background-color: #006486;
+font-family: "Trebuchet MS", Lucida,Geneva, Arial, Helvetica, SunSans-Regular, sans-serif;
+font-size: 12px;
+color: #ffffff;
+font-weight: bold;
+margin: 0px;
+padding: 1px 10px;
+}
+
+#top p.logo {
+float:right;
+margin: 0px;
+padding: 0px 0px;
+letter-spacing:8px;
+}
+#top a.logolink {
+    color: #ffffff;   
+}
+
+#top a.logolink:hover {color: #990066;}
+.clr{
+clear: right;}
+
+#container {
+padding: 10px;
+}
+#container .bookmark {
+float:right;
+margin: 0px;
+padding: 0px;
+}
+
+#container select {
+margin: 0px 0px 0px 5px;
+font-size:10px;
+width:150px;
+}
+
+
+.browserWarning, .browserWarningRed {
+padding: 4px;
+width: 450px;
+position: absolute;
+top: 15px;
+left: 320px;
+height: 27px;
+font-size: 10px;
+border: 1px solid black;
+}
+
+.browserWarningRed {
+background-color: #FF6060;
+}
+

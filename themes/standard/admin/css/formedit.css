@@ -1,0 +1,291 @@
+body {
+    
+    background-color : #FFFFFF;
+    margin-top : 10px;
+    margin-left : 10px;
+    margin-right : 6px;
+}
+
+body, td {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size : 11px;
+}
+
+input, textarea, div[contentEditable], .scrollbox {
+    font-size : 11px;    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    border: solid #006486 1px;
+    padding-left: 3px;
+    background-color: white;
+    z-index: 10;
+}
+
+
+ input[type="submit"], input[type="button"], input[type="reset"], .buttonStyle,  a.buttonStyle , .buttonStyleActive ,  a.buttonStyleActive {
+    border: solid black 1px;
+    background-color: #006486;
+    color: white;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+select {
+    font-size : 11px;    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    border: solid #006486 1px;
+    padding-left: 3px;
+    background-color: white;
+    z-index: 10;
+/*    width:600px;  */
+}
+
+.buttonStyle,  a.buttonStyle {
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.buttonStyleActive ,  a.buttonStyleActive {
+    color: black;
+    background-color: white;
+    border-bottom: 1px white solid;
+    padding-bottom: 1px;
+    z-index: 20;
+    
+}
+
+
+.bgDarkGreen {
+    background-color: #006486 ! important;
+    color: white;
+}
+
+h1.pageTitle, h1.page, h2.page { 
+    background-color: #006486 ! important;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    padding-left: 15px;
+    width: 95%;
+    
+}
+
+h2.page {
+    padding-left: 10px;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+td h2.page {
+    width: inherit;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.stdBorder {
+        border: solid #006486 1px;
+}
+
+td.stdBorder {
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+.bigUglyEditTable, .bgLightGreen {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    
+}
+
+.bigUglyEditTable th {
+    color: #006486;
+    text-align: left;
+    padding-right: 10px;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.bigUglyEditTable td {
+    padding-right: 10px;
+}
+
+.bigUglyEditTable tr.uneven {
+    background-color: #f3f3f3;
+}
+
+.bigUglyEditTable a, .bigUglyEditTable a:visited{
+    color: #006486;
+    text-decoration: none;
+}
+
+.bigUglyEditTable a:active {
+    color: #990066;
+}
+
+
+
+
+
+.bigUglyBorderedEditTable {
+    background-color: #f3f3f3;
+    border: 1px solid;
+width:100%;
+}
+
+.scrollbox {
+    max-height: 450px; 
+    overflow: auto;
+    padding-bottom: 5px;
+}
+
+/* overview... */
+
+
+
+ul li {
+    list-style: none;
+    color: black;
+    
+}
+
+ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: black;
+    text-decoration: underline;
+}
+div.activeTabPane ul {
+    margin-top: 0px;
+  
+    
+}
+div.activeTabPane {
+    display:block;
+    background-color: #B7E09C ;
+    margin-top: 0px;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0px;
+    padding: 10px 0px 1px 0px;;
+}
+
+div.nonActiveTabPane {
+    display: none;
+}
+
+
+
+.nav {white-space: nowrap;}
+.nav li {display: inline; list-style: none;}
+.nav span {font-weight: bold;}
+
+#LSResult { background-color: #006486;
+    color: #ffffff;
+    border: 1px solid #000000;
+    padding: 1px 10px;
+    margin-left: 10px;
+    display: none;
+    
+}
+
+body#upload{
+    padding: 0px;
+    margin: 5px ! important; 
+    background-color: #f3f3f3;
+}
+
+.openIdTrust {
+    background-color:#f3f3f3;
+    width: 94%;
+    padding: 5px;
+    padding-top:10px;
+    padding-left: 15px;
+    border: 5px solid #006486;
+}
+
+.openIdTrust h3 {
+color: #000000;
+}
+
+.personaform select {
+    width:300px;
+}
+
+
+h1.pageTitle, h1.page, h2.openIdPage {
+    margin:0px;
+    background-color: #006486 ! important;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    padding-left: 11px;
+    width: 95%;
+    
+}
+/*
+#users {
+    background-color:#f3f3f3;
+    width: 930px;
+    padding: 5px;
+    padding-top:10px;
+    padding-left: 15px;
+    border: 5px solid #006486;
+}
+
+h2.userPage {
+    margin:0px;
+	padding-right:10px;
+    background-color: #006486 ! important;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    width: 950px;
+    
+}
+*/
+
+.sortable {
+    
+    min-height: 2.6em;
+    //height: 2,6em;
+    border: 1px solid #006486;
+        margin-left: 0px;    
+    
+}
+
+.sortableContainer {
+    float: left;
+    margin-right: 20px;   
+}
+
+.sortable li {
+    border: 1px solid #006486;
+    margin-bottom: 2px;
+    min-height: 1.4em;
+    //height: 1.4em;
+    padding: 0.2em;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+#userdiv p {
+	padding:0px;
+	margin:0px;
+}
+
+.profileTable {
+    border:0px;
+}
+
+.used {
+background-color: #9a9a9a;
+}

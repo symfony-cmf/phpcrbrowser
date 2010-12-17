@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar
+xmlns:bxe="http://bitfluxeditor.org/schema/2.0"
+ xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="rss">
+      <attribute name="version">
+        <data type="decimal"/>
+      </attribute>
+      <element name="channel">
+        <ref name="title"/>
+        <ref name="link"/>
+        <element name="description">
+          <text/>
+        </element>
+        <oneOrMore>
+          <element name="item">
+            <ref name="title"/>
+            <ref name="link"/>
+            <element name="guid">
+            
+              <attribute name="isPermaLink">
+              <bxe:defaultcontent>false</bxe:defaultcontent>
+                <data type="boolean"/>
+              </attribute>
+              <data type="anyURI"/>
+            </element>
+            <element name="content:encoded">
+              <oneOrMore>
+                
+                  <element name="xhtml:p">
+                    <oneOrMore>
+                      <choice>
+                        <text/>
+                        <element name="xhtml:a">
+                          <attribute name="href">
+                            <data type="anyURI"/>
+                          </attribute>
+                          <text/>
+                        </element>
+                        <element name="xhtml:em">
+                          <text/>
+                        </element>
+                        <element name="xhtml:b">
+                          <text/>
+                        </element>
+                           <element name="xhtml:sup">
+                          <text/>
+                        </element>
+                           <element name="xhtml:sub">
+                          <text/>
+                        </element>
+                      </choice>
+                    </oneOrMore>
+					<bxe:nextelement ns="http://www.w3.org/1999/xhtml">p</bxe:nextelement> 
+                  </element>
+           
+         
+              </oneOrMore>
+            </element>
+            <oneOrMore>
+              <element name="dc:subject">
+                <text/>
+              </element>
+            </oneOrMore>
+            <element name="dc:creator">
+              <data type="NCName"/>
+            </element>
+            <element name="dc:date">  
+            <bxe:defaultcontent type="function">bxe_getDate</bxe:defaultcontent>
+              <text/>
+            </element>
+          </element>
+        </oneOrMore>
+      </element>
+    </element>
+  </start>
+  <define name="title">
+    <element name="title">
+      <text/>
+    </element>
+  </define>
+  <define name="link">
+    <element name="link">
+      <data type="anyURI"/>
+    </element>
+  </define>
+</grammar>

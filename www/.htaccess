@@ -1,0 +1,17 @@
+php_value error_reporting 6135
+php_value magic_quotes_gpc Off
+
+RewriteEngine On
+
+
+
+
+
+
+RewriteCond %{REQUEST_URI}  !^/favicon.ico
+RewriteCond %{REQUEST_URI}  !^.*/*static/
+RewriteCond %{REQUEST_URI}  !^/*s/
+RewriteCond %{REQUEST_URI}  !^/*themes/
+RewriteCond %{REQUEST_URI}  !^/.*index.php
+RewriteCond %{REQUEST_URI}  !^/.*info.php
+RewriteRule ^/*(.+)$ ./index.php/$1 [QSA]

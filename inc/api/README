@@ -1,0 +1,17 @@
+NAME:
+
+    Okapi documentation
+
+DESCRIPTION:
+
+    Okapi is a lean web framework optimized for processing of XML pipelines.
+    
+    It has the following features:
+    
+        - Parse incoming URLs and call configured commands (api_routing)
+        - Commands to collect some data from models and put it in an XML DOM structure (api_command)
+        - Models which provide XML representation of a diverse set of data (api_model and it's subclasses)
+        - Views that use XSLT for templating (api_views_common and children)
+        - Context-aware configuration handling (api_config)
+        - Uniform and configurable exception handling (api_exceptionhandler and api_exception)
+        - Internationalisation of output (api_i18n)

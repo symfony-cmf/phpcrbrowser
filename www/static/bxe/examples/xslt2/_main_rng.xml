@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns=""
+	xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+	xmlns:bxe="http://bitfluxeditor.org/schema/2.0"
+>
+
+<!-- START -->
+	<start>
+	
+		<element name="document">
+			<bxe:name>Document</bxe:name>
+			
+			<element name="header">
+				<bxe:name>Header</bxe:name>
+				<element name="shorttitle">
+					<bxe:name>Short Title</bxe:name>
+					<text/>
+				</element>
+				<element name="subs">
+					<bxe:name>Subs</bxe:name>
+					<zeroOrMore>
+						<ref name="_ilink"/>
+					</zeroOrMore>
+				</element>
+				<element name="keywords">
+					<bxe:name>Keywords</bxe:name>
+					<text/>
+				</element>
+				<optional>
+					<element name="specials">
+						<bxe:name>Specials</bxe:name>
+						<text/>
+					</element>
+				</optional>
+				<element name="docnotes">
+					<bxe:name>Document Notes</bxe:name>
+					<text/>
+				</element>
+				
+			</element>
+			
+			<element name="content">
+				<bxe:name>Document Content</bxe:name>
+				<element name="title">
+					<bxe:name>Document Title</bxe:name>
+					<text/>
+				</element>
+				<element name="abstract">
+					<bxe:name>Document Abstract</bxe:name>
+					<text/>
+				</element>
+		
+				<oneOrMore>
+					<element name="page">
+						<bxe:name>Page</bxe:name>
+						<ref name="_coid"/>
+						
+						<oneOrMore>
+							<element name="article">
+								<bxe:name>Article</bxe:name>
+								<ref name="_coid"/>
+								
+								<oneOrMore>
+									<element name="collection">
+										<bxe:name>Collection</bxe:name>
+										<ref name="_coid"/>
+										
+										<attribute name="layout">
+											<bxe:defaultcontent>col</bxe:defaultcontent>
+											<choice>
+											      <value type="string">col</value>
+											      <value type="string">row</value>
+											</choice>										
+										</attribute>
+										<oneOrMore>
+											<element name="block">
+												<bxe:name>Block</bxe:name>
+												<ref name="_coid"/>
+												
+												<attribute name="align">
+													<bxe:defaultcontent>left</bxe:defaultcontent>
+													<choice>
+													      <value type="string">#align</value> <!-- deprecated -->
+													      <value type="string">left</value>
+													      <value type="string">right</value>
+													</choice>										
+												</attribute>
+												
+												<oneOrMore>
+													<ref name="_div_type"/>
+												</oneOrMore>
+											</element>
+										</oneOrMore>
+									</element>
+								</oneOrMore>
+							</element>
+						</oneOrMore>
+					</element>
+				</oneOrMore>
+			</element>
+		
+		</element>
+		
+	</start>
+
+<!-- END -->
+
+
+<!-- DEFINITIONS -->
+
+	<define name="_coid">
+		<attribute name="coid">
+			<!-- 2do -->
+			<data type="NCName"/>
+            <bxe:onnew type="function" >cope2_set_coid</bxe:onnew>
+            <bxe:noteditable/>
+		</attribute>
+	</define>
+
+<!-- div (block) type definitions -->
+
+	<define name="_div_type">
+		<choice>
+			<ref name="_spacer"/>
+			<ref name="_para"/>
+			<ref name="_paraheadline"/>
+			<ref name="_itemizedlist"/>
+			<ref name="_orderedlist"/>
+			<ref name="_table"/>
+			<ref name="_media"/>
+			<ref name="_download"/>
+			<ref name="_news"/>
+			<ref name="_systemhouse"/>
+			<ref name="_competencecenter"/>
+			
+			<!-- the following elements are staticly rendered by xsl transformation... -->
+				<element name="news_overview_navigator">
+					<bxe:name>News Overview Navigator</bxe:name>
+					<bxe:childsnoteditable/>
+					<text/>
+				</element>
+				<element name="news_preview_navigator">
+					<bxe:name>News Preview Navigator</bxe:name>
+					<bxe:childsnoteditable/>
+					<text/>
+				</element>
+				<element name="systemhousenavigator">
+					<bxe:name>Systemhouses Navigator</bxe:name>
+					<bxe:childsnoteditable/>
+					<text/>
+				</element>
+				<element name="competencecenternavigator">
+					<bxe:name>CompetenceCenter Navigator</bxe:name>
+					<bxe:childsnoteditable/>
+					<text/>
+				</element>
+				<element name="bechtleshopnavigator">
+					<bxe:name>Shops Navigator</bxe:name>
+					<bxe:childsnoteditable/>
+					<text/>
+				</element>
+				<element name="roadmaps_navigator">
+					<bxe:name>Roadmaps Navigator</bxe:name>
+					<bxe:childsnoteditable/>
+					<text/>
+				</element>
+				<element name="xform">
+					<bxe:name>Formular...</bxe:name>
+					<bxe:childsnoteditable/>
+					<attribute name="type">
+						<bxe:defaultcontent>contact_standard</bxe:defaultcontent>
+						<choice>
+						      <value type="string">contact_standard</value>
+						      <value type="string">ir_mailservice</value>
+						      <value type="string">press_mailservice</value>
+						</choice>										
+					</attribute>
+					<attribute name="recipient">
+						<bxe:defaultcontent>info@bechtle.com</bxe:defaultcontent>
+						<text/>
+					</attribute>
+					<text/>
+				</element>
+				<element name="chart-xpose">
+					<bxe:name>Bechtle Chart Viewer</bxe:name>
+					<bxe:childsnoteditable/>
+					<text/>
+				</element>
+				
+			<!-- END -->
+			
+			<ref name="_person"/>
+			<ref name="_address"/>
+			<!-- 'roadmap' element currently only exists within an address -->
+			<ref name="_docnote"/>
+			<ref name="_system"/>
+		</choice>
+	</define>
+	
+	<define name="_para">
+		<element name="para">
+			<bxe:name>Paragraph</bxe:name>
+			<!--<bxe:onnew type="function">cope2_newPara</bxe:onnew>-->
+            <bxe:defaultcontent>New paragraph...</bxe:defaultcontent>
+			<bxe:menuentry name="test" type="function">foo</bxe:menuentry>
+            <bxe:menuentry name="Popup" type="popup">replacecontent.html</bxe:menuentry>
+			<ref name="_text_type"/>
+		</element>
+	</define>
+	
+	<define name="_paraheadline">
+		<element name="paraheadline">
+			<bxe:name>Paragraph Headline</bxe:name>
+			<bxe:defaultcontent>New paragraph headline...</bxe:defaultcontent>
+            <bxe:nextelement>para</bxe:nextelement>
+			<ref name="_coid"/>
+			
+			<choice>
+				<text/>
+				<group>
+					<text/>
+					<ref name="_anker"/>
+					<text/>
+				</group>
+				<group>
+					<ref name="_anker"/>
+					<text/>
+				</group>
+				<group>
+					<text/>
+					<ref name="_anker"/>
+				</group>
+			</choice>
+		</element>
+	</define>
+	
+	<define name="_itemizedlist">
+		<element name="itemizedlist">
+			<bxe:name>Itemized List</bxe:name>
+			
+			<oneOrMore>
+				<ref name="_bxlistitem"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="_orderedlist">
+		<element name="orderedlist">
+			<bxe:name>Ordered List</bxe:name>
+			
+			<oneOrMore>
+				<ref name="_bxlistitem"/>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="_bxlistitem">
+		<element name="bxlistitem">
+			<bxe:name>List Item</bxe:name>
+			<bxe:defaultcontent>New list item...</bxe:defaultcontent>
+			<ref name="_text_type"/>
+		</element>
+	</define>
+
+	<define name="_table">
+		<element name="table">
+			<bxe:name>Table</bxe:name>
+		
+			<oneOrMore>
+				<element name="tr">
+					<bxe:name>Table Row</bxe:name>
+					<oneOrMore>
+						<element name="td">
+							<bxe:name>Table Data</bxe:name>
+							<optional><attribute name="align">
+								<choice>
+								      <value type="string">left</value>
+								      <value type="string">center</value>
+								      <value type="string">right</value>
+								</choice>										
+							</attribute>
+							<attribute name="valign">
+								<choice>
+								      <value type="string">top</value>
+								      <value type="string">middle</value>
+								      <value type="string">bottom</value>
+								</choice>										
+							</attribute>
+							<attribute name="colspan">
+								<data type="int"/>
+							</attribute>
+							<attribute name="rowspan">
+								<data type="int"/>
+							</attribute>
+                            </optional>
+							<oneOrMore>
+								<choice>
+									<ref name="_text_type"/>
+									<ref name="_span_type"/>
+									<ref name="_div_type"/>
+								</choice>
+							</oneOrMore>
+						</element>
+					</oneOrMore>
+				</element>
+			</oneOrMore>
+		</element>
+	</define>
+	
+	<define name="_media">
+		<element name="media">
+		
+		<bxe:name>Media</bxe:name>
+			<attribute name="url">
+				<bxe:defaultcontent>/testimage</bxe:defaultcontent>   
+				<text/>
+			</attribute>
+			<attribute name="x-size">
+				<bxe:defaultcontent>0</bxe:defaultcontent>
+				<data type="int">
+					<param name="minInclusive">0</param> <!-- 0 means the orig size -->
+    				<param name="maxInclusive">1200</param>
+    			</data>
+			</attribute>
+			<attribute name="y-size">
+				<bxe:defaultcontent>0</bxe:defaultcontent>
+				<data type="int">
+					<param name="minInclusive">0</param> <!-- 0 means the orig size -->
+    				<param name="maxInclusive">1200</param>
+    			</data>
+			</attribute>
+			<attribute name="format">
+				<bxe:defaultcontent>original</bxe:defaultcontent>
+				<choice>
+				      <value type="string">original</value>
+				      <value type="string">gif</value>
+				      <value type="string">png</value>
+				      <value type="string">jpg</value>
+				</choice>										
+			</attribute>
+			
+			<attribute name="caption">
+				<bxe:defaultcontent>Caption...</bxe:defaultcontent>
+				<text/>
+			</attribute>
+		</element>
+	</define>
+	
+	<define name="_news">
+		<element name="news">
+			<bxe:name>A News</bxe:name>
+			<ref name="_coid"/>
+			
+			<element name="title">
+				<bxe:name>News Title</bxe:name>
+				<text/>
+			</element>
+			<element name="timestamp">
+				<bxe:name>Timestamp</bxe:name>
+				<element name="year">
+					<bxe:name>Year</bxe:name>
+					<bxe:defaultcontent type="function">cope2_getYear</bxe:defaultcontent>
+			
+					<data type="int">
+						<param name="minInclusive">2005</param>
+	    				<param name="maxInclusive">2015</param> <!-- 2016.01.01: cope2 will suicide. juhu >:) -->
+	    			</data>
+				</element>
+				<element name="month">
+					<bxe:name>Month</bxe:name>
+					<bxe:defaultcontent type="function">cope2_getMonth</bxe:defaultcontent>
+			
+					<data type="int">
+						<param name="minInclusive">1</param>
+	    				<param name="maxInclusive">12</param>
+	    			</data>
+				</element>
+				<element name="day">
+					<bxe:name>Day</bxe:name>
+					<bxe:defaultcontent type="function">cope2_getDay</bxe:defaultcontent>
+					<data type="int">
+						<param name="minInclusive">1</param>
+	    				<param name="maxInclusive">31</param>
+	    			</data>
+				</element>
+				<element name="hour">
+					<bxe:name>Hour</bxe:name>
+                    <bxe:defaultcontent type="function">cope2_getHour</bxe:defaultcontent>
+                    <data type="int">
+						<param name="minInclusive">0</param>
+	    				<param name="maxInclusive">23</param>
+	    			</data>
+				</element>
+				<element name="minute">
+					<bxe:name>Minute</bxe:name>
+					<bxe:defaultcontent type="function">cope2_getMinute</bxe:defaultcontent>
+                    <data type="int">
+						<param name="minInclusive">0</param>
+	    				<param name="maxInclusive">59</param>
+	    			</data>
+				</element>
+			</element>
+			<element name="source">
+				<bxe:name>Source</bxe:name>
+				<text/>
+			</element>
+			<element name="content">
+				<bxe:name>Content</bxe:name>
+				<bxe:defaultcontent>News content...</bxe:defaultcontent>
+				
+				<oneOrMore>
+					<choice>
+						<ref name="_text_type"/>
+						<ref name="_span_type"/>
+						<ref name="_div_type"/>
+					</choice>
+				</oneOrMore>
+			</element>
+			<element name="author">
+				<bxe:name>Author</bxe:name>
+				<bxe:defaultcontent>News Author...</bxe:defaultcontent>
+				<text/>
+			</element>
+			<element name="contact">
+				<bxe:name>Contact</bxe:name>
+				<ref name="_email"/>
+			</element>
+		</element>
+	</define>
+	
+	<define name="_person">
+		<element name="person">
+			<bxe:name>Person</bxe:name>
+			<ref name="_coid"/>
+		
+			<optional>
+				<element name="location">
+					<bxe:name>Location</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<optional>
+				<element name="gender">
+					<bxe:name>Gender</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<optional>
+				<element name="title">
+					<bxe:name>Title</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<element name="firstname">
+				<bxe:name>First Name</bxe:name>
+				<text/>
+			</element>
+			<element name="lastname">
+				<bxe:name>Last Name</bxe:name>
+				<text/>
+			</element>
+			<optional>
+				<element name="fon">
+					<bxe:name>Fon Number</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<optional>
+				<element name="fax">
+					<bxe:name>Fax Number</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<ref name="_email"/>
+			<optional>
+				<ref name="_address"/>
+			</optional>
+      
+		</element>
+	</define>
+	
+	<define name="_address">
+		<element name="address">
+			<bxe:name>Address (Postal)</bxe:name>
+			<ref name="_coid"/>
+			<interleave>
+			<element name="name">
+				<bxe:name>Name</bxe:name>
+				<text/>
+			</element>
+			<optional>
+				<element name="postoffice">
+					<bxe:name>Postoffice (PO Box)</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<element name="street">
+				<bxe:name>Street Name</bxe:name>
+				<text/>
+			</element>
+			<element name="number">
+				<bxe:name>Street Number</bxe:name>
+				<text/>
+			</element>
+			<element name="zipcode">
+				<bxe:name>Zipcode (PLZ)</bxe:name>
+				<text/>
+			</element>
+			<element name="city">
+				<bxe:name>City Name</bxe:name>
+				<text/>
+			</element>
+			<optional>
+				<element name="state">
+					<bxe:name>State of Country</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<element name="country">
+				<bxe:name>Country Name</bxe:name>
+				<text/>
+			</element>
+			<optional>
+				<element name="fon">
+					<bxe:name>Fon Number</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<optional>
+				<element name="fax">
+					<bxe:name>Fax Number</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<optional>
+				<ref name="_email"/>
+			</optional>
+			<optional>
+				<ref name="_roadmap"/>
+			</optional>
+            </interleave>
+		</element>
+	</define>
+
+
+	<define name="_roadmap">
+		<element name="roadmap">
+			<bxe:name>Roadmap</bxe:name>
+			<ref name="_coid"/>
+			
+			<ref name="_media"/>
+			<zeroOrMore>
+				<ref name="_div_type"/>
+			</zeroOrMore>
+		</element>
+	</define>
+
+	<define name="_systemhouse">
+		<element name="systemhouse">
+			<bxe:name>Bechtle Systemhouse</bxe:name>
+			<ref name="_coid"/>
+			
+			<element name="company">
+				<bxe:name>Company</bxe:name>
+				<text/>
+			</element>
+			<oneOrMore>
+				<element name="ceo">
+					<bxe:name>CEO Person</bxe:name>
+					<ref name="_media"/>
+					<element name="firstname">
+						<bxe:name>First Name</bxe:name>
+						<text/>
+					</element>
+					<element name="lastname">
+						<bxe:name>Last Name</bxe:name>
+						<text/>
+					</element>
+					<ref name="_email"/>
+				</element>
+			</oneOrMore>
+			<element name="image">
+				<bxe:name>Building image</bxe:name>
+				<ref name="_media"/>
+			</element>
+			<ref name="_address"/>
+		</element>
+	</define>
+
+	<define name="_competencecenter">
+		<element name="competencecenter">
+			<bxe:name>Bechtle CompetenceCenter</bxe:name>
+			<ref name="_coid"/>
+
+			<element name="title">
+				<bxe:name>Company Title</bxe:name>
+				<text/>
+			</element>
+			<element name="name">
+				<bxe:name>Competence Name</bxe:name>
+				<text/>
+			</element>
+			<element name="concept">
+				<bxe:name>Concept</bxe:name>
+				<text/>
+			</element>
+			<element name="portfolio">
+				<bxe:name>Competence Portfolio</bxe:name>
+				<ref name="_itemizedlist"/>
+			</element>
+			<element name="team">
+				<bxe:name>Team</bxe:name>
+				<text/>
+			</element>
+			<element name="customers">
+				<bxe:name>Customers</bxe:name>
+				<text/>
+			</element>
+			<optional>
+				<element name="partner">
+					<bxe:name>Partner</bxe:name>
+					<text/>
+				</element>
+			</optional>
+			<element name="data">
+				<bxe:name>Data</bxe:name>
+				<text/>
+			</element>
+			<element name="contact">
+				<bxe:name>Contact List</bxe:name>
+				<oneOrMore>
+					<ref name="_person"/>
+				</oneOrMore>
+			</element>
+
+		</element>
+	</define>
+	
+	<!-- span type definitions -->
+	
+	<define name="_span_type">
+		<choice>
+			<ref name="_nowrap"/>
+			<ref name="_emphasize"/>
+			<ref name="_bold"/>
+			<ref name="_subscript"/>
+			<ref name="_superscript"/>
+			<ref name="_ankerlink"/>
+			<ref name="_ilink"/>
+			<ref name="_elink"/>
+			<ref name="_email"/>
+			<ref name="_download"/>
+			<ref name="_docnote"/>
+			<ref name="_system"/>
+		</choice>
+	</define>
+	
+	<define name="_text_type">
+		<oneOrMore>
+			<choice>
+				<text/>
+				<ref name="_span_type"/>
+			</choice>
+		</oneOrMore>
+	</define>
+	
+	<define name="_spacer">
+		<element name="spacer">
+			<bxe:name>Spacer</bxe:name>
+			<attribute name="display">
+				<choice>
+				      <value type="string">#display</value> <!-- deprecated -->
+				      <value type="string">span</value>
+				      <value type="string">line</value>
+				</choice>										
+			</attribute>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_nowrap">
+		<element name="nowrap">
+			<bxe:name>No Wrap</bxe:name>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_emphasize">
+		<element name="emphasize">
+			<bxe:name>Emphasize</bxe:name>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_bold">
+		<element name="bold">
+			<bxe:name>Bold</bxe:name>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_subscript">
+		<element name="subscript">
+			<bxe:name>Subscript</bxe:name>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_superscript">
+		<element name="superscript">
+			<bxe:name>Superscript</bxe:name>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_anker">
+		<element name="anker">
+			<bxe:name>Anker Destination</bxe:name>
+			<ref name="_coid"/>
+			
+			<attribute name="name">
+				<text/>
+			</attribute>
+			<text/>
+		</element>
+	</define>
+
+	<define name="_ankerlink">
+		<element name="ankerlink">
+			<bxe:name>Anker Link</bxe:name>
+			<ref name="_coid"/>
+			
+			<attribute name="url">
+				<text/>
+			</attribute>
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_download">
+		<element name="download">
+			<bxe:name>Download Link</bxe:name>
+			<ref name="_coid"/>
+			
+			<attribute name="url">
+				<text/>
+			</attribute>
+			<choice>
+				<text/>
+				<ref name="_media"/>
+			</choice>
+		</element>
+	</define>
+	
+	<define name="_ilink">
+		<element name="ilink">
+			<bxe:name>Internal Link</bxe:name>
+            <bxe:onnew type="popup">./link.html</bxe:onnew>
+			<attribute name="url">
+            <bxe:defaultcontent>#link</bxe:defaultcontent>
+				<text/>
+			</attribute>
+			<choice>
+				<text/>
+				<ref name="_media"/>
+			</choice>
+		</element>
+	</define>
+	
+	<define name="_elink">
+		<element name="elink">
+			<bxe:name>External Link</bxe:name>
+			<attribute name="url">
+				<text/>
+			</attribute>
+			<choice>
+				<text/>
+				<ref name="_media"/>
+			</choice>
+		</element>
+	</define>
+	
+	<define name="_email">
+		<element name="email">
+			<bxe:name>Email Link</bxe:name>
+			<attribute name="address">
+				<text/>
+                <bxe:defaultcontent>herr.meier@bechtle.com</bxe:defaultcontent>
+                <bxe:selector type="function">emailselector</bxe:selector>    
+			</attribute>
+			<choice>
+				<text/>
+			</choice>
+		</element>
+	</define>
+	
+	<define name="_docnote">
+		<element name="docnote">
+			<bxe:name>Document Note</bxe:name>
+			<ref name="_coid"/>
+			
+			<text/>
+		</element>
+	</define>
+	
+	<define name="_system">
+		<element name="system">
+			<bxe:name>System (internal!)</bxe:name>
+			<ref name="_coid"/>
+			<attribute name="name">
+				<text/>
+			</attribute>
+		</element>
+	</define>
+
+</grammar>

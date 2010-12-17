@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:tal="http://xml.zope.org/namespaces/tal">
+    <head>
+        <title tal:content="/bx/plugin[@name='xhtml']/xhtml:html/xhtml:head/xhtml:title">Bitflux</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="./themes/css/main.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body id="ng_bitflux_org">
+        <div id="container">
+            <div id="banner">
+                <div id="metanavi">
+                    <a href="http://ng.bitflux.org/en/">english</a>
+                </div>
+                <a href="http://ng.bitflux.org/">Flux CMS Demo</a>
+            </div>
+            <div id="topnavi" tal:repeat="item /bx/plugin[@name='navitree']/collection/items/collection">
+                <span tal:condition="$item[@selected = 'selected']"><a class="selected" tal:attributes="href $item/uri; title $item/title" tal:content="$item/title"/></span>
+                <span tal:condition="$item[not(@selected = 'selected')]"><a tal:attributes="href $item/uri; title $item/title" tal:content="$item/title"/></span>
+            </div>
+
+            <div id="left">
+                <ul tal:repeat="item /bx/plugin[@name='navitree']/collection/items/collection[@selected = 'selected']/items/collection">
+                    <li>
+                        <a href="$item/uri" tal:attributes="href $item/uri; title $item/title" tal:content="$item/title"/>
+                    </li>
+                </ul>
+            </div>
+            <div id="content" tal:content="structure /bx/plugin[@name='xhtml']/xhtml:html/xhtml:body/node()">Here goes the content</div>
+
+            <div id="footer">Flux CMS - <a href="http://bitflux.org/">http://www.flux-cms.org</a>
+            </div>
+        </div>
+    </body>
+</html>
