@@ -1,5 +1,8 @@
 #!/bin/sh
 
+mkdir tmp/
+chmod a+rw tmp
+
 # initialization
 DIR=`php -r "echo realpath(dirname(\\$_SERVER['argv'][0]));"`/ext
 
