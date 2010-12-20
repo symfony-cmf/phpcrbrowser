@@ -1,0 +1,17 @@
+README
+******
+
+
+* clone repo
+* bash install_vendors.sh
+* adust www/index.php to your configuration options (if you start jackrabbit with the default settings, those don't have to be changed)
+* add a virtual host to your apache like
+
+<VirtualHost *:80>
+DocumentRoot /opt/git/lxcr/www
+ServerName lxcr.lo
+</VirtualHost>
+
+* add an /etc/hosts entry for lxcr.lo
+* start jackrabbit
+* call http://lxcr.lo/admin/
