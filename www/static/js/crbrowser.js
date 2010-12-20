@@ -432,12 +432,12 @@ YAHOO.cr.topmenu = function(){
             var aSubmenuData = [{
                 id: "communication",
                 itemdata: [[{
-                    text: "Show History",
+                    text: "Show History (missin)",
                     onclick: {
                         fn: YAHOO.cr.versionsTable.update
                     }
                 },{
-                    text: "Create Version",
+                    text: "Create Version (missing)",
                     onclick: {
                         fn: YAHOO.cr.versionsTable.createVersion
                     }
