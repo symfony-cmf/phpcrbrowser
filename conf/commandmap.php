@@ -1,51 +1,52 @@
 <?php
 $m = new api_routing();
-$m->route('webdav/*path')
+/* $m->route('webdav/*path')
   ->config(array(
     'command' => 'webdav',
     'method' => 'index',
     'view' => array('xsl' => 'webdav.xsl','class'=>'noview')));
+
 
 $m->route('edit/*path')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'index',
     'view' => array('xsl' => 'default.xsl')));
-
-$m->route('admin/__json__/tree/')
+*/
+$m->route('__json__/tree/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'tree',
     'view' => array('class' => 'txt')));
 
-  $m->route('admin/__json__/properties/')
+  $m->route('__json__/properties/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'properties',
     'view' => array('class' => 'txt')));
 
 
-    $m->route('admin/__json__/versions/')
+    $m->route('__json__/versions/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'versions',
     'view' => array('class' => 'txt')));
 
-    $m->route('admin/__json__/restore/')
+    $m->route('__json__/restore/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'restore',
     'view' => array('class' => 'txt')));
 
 
-      $m->route('admin/__json__/nodetypes/')
+      $m->route('__json__/nodetypes/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'nodetypes',
     'view' => array('class' => 'txt')));
 
 
-      $m->route('admin/__json__/addnode/')
+      $m->route('__json__/addnode/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'addnode',
@@ -53,34 +54,34 @@ $m->route('admin/__json__/tree/')
 
 
 
-      $m->route('admin/__json__/delcache/')
+      $m->route('__json__/delcache/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'delcache',
     'view' => array('class' => 'txt')));
 
 
-        $m->route('admin/__json__/createversion/')
+        $m->route('__json__/createversion/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'createversion',
     'view' => array('class' => 'txt')));
 
 
-        $m->route('admin/__json__/setproperty/')
+        $m->route('__json__/setproperty/')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'setproperty',
     'view' => array('class' => 'txt')));
 
 
-  $m->route('admin/*path')
+  $m->route('*path')
   ->config(array(
     'command' => 'crbrowser',
     'method' => 'index',
     'view' => array('xsl' => 'crbrowser2.xsl')));
 
-  $m->route('*path')
+  /*$m->route('*path')
   ->config(array(
     'command' => 'lxcr',
     'method' => 'put',
@@ -93,3 +94,5 @@ $m->route('admin/__json__/tree/')
     'command' => 'lxcr',
     'method' => 'index',
     'view' => array('class' => 'lxcr','xsl' => 'default.xsl')));
+    
+    */
