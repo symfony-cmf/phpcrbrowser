@@ -8,10 +8,10 @@ README
 * add a virtual host to your apache like
 
 <VirtualHost *:80>
-DocumentRoot /opt/git/lxcr/www
-ServerName lxcr.lo
+DocumentRoot /opt/git/phpcrbrowser/www
+ServerName phpcr.lo
 </VirtualHost>
 
-* add an /etc/hosts entry for lxcr.lo
+* add an /etc/hosts entry for phpcr.lo
 * start jackrabbit
-* call http://lxcr.lo/admin/
+* call http://phpcr.lo/
