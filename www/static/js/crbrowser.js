@@ -578,10 +578,10 @@ YAHOO.cr.dialogNewNode = function(){
                     
                 }
                 
-                YAHOO.util.Connect.asyncRequest('GET', '/admin/__json__/nodetypes/', callback, null);
+                YAHOO.util.Connect.asyncRequest('GET', '/__json__/nodetypes/', callback, null);
                 
             }
-			$('dialogNewNodeForm').action="/admin/__json__/addnode/?fullpath=" + YAHOO.cr.propTable.currentPath;
+			$('dialogNewNodeForm').action="/__json__/addnode/?fullpath=" + YAHOO.cr.propTable.currentPath;
             dialog.show();
         },
         hide: function(){
