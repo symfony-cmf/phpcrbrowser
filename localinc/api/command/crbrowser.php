@@ -168,11 +168,12 @@ class api_command_crbrowser extends api_command {
 
         $node = $this->getNode();
         $data = array("ResultSet" => array("Result" => array()));
+                $sess = $this->getSession();
 
-        $foo = $node->getVersionHistory();
-        $vers = $foo->getAllVersions();
-        while ($n = $vers->nextVersion()) {
-            $f = array("name" => $n->getName(), "date" => $n->getCreated()->format("c"));
+        $vm = $sess->getWorkspace()->getVersionManager();
+        $foo = $vm->getVersionHistory($node->getPath());
+        foreach ($foo->getAllVersions() as $n) {
+            $f = array("name" => $n->getName(), "date" => $n->getProperty("jcr:created")->getString());
             //if ($n->hasNode($n->hasProperty("jcr:content/jcr:data")) {
             try {
                 $f['size'] = $n->getProperty("jcr:frozenNode/jcr:content/jcr:data")->getLength();
@@ -184,7 +185,7 @@ class api_command_crbrowser extends api_command {
         }
 
         $f['name'] = 'base';
-        $f['date'] = $node->getBaseVersion()->getName();
+     //   $f['date'] = $node->getBaseVersion()->getName();
         $f['size'] = '';
         $data["ResultSet"]["Result"][] = $f;
         $this->data = json_encode($data);
@@ -210,15 +211,19 @@ class api_command_crbrowser extends api_command {
     function restore() {
         $sess = $this->getSession();
         $node = $this->getNode();
-        if (! $node->isCheckedOut()) {
-            $node->checkout();
-        }
+        //if (! $node->isCheckedOut()) {
+            $vm = $sess->getWorkspace()->getVersionManager();
+            
+            $vm->checkout($node->getPath());
+            
+        //}
 
-        $node->restore($_GET['version'], true);
+        $vm->restore(true,$_GET['version'], $node->getPath());
         $sess->save();
-        $node->checkin();
-        $node->checkout();
-
+        $vm->checkin($node->getPath());
+        
+        $vm->checkout($node->getPath());
+        
         $this->data = json_encode(true);
 
     /*if (is_object($foo)) {
@@ -230,9 +235,10 @@ class api_command_crbrowser extends api_command {
      function addnode() {
          $sess = $this->getSession();
         $node = $this->getNode();
- /*  if (! $node->isCheckedOut()) {
-            $node->checkout();
-        }*/
+        if (! $node->isCheckedOut()) {
+            $vm = $sess->getWorkspace()->getVersionManager();
+            $vm->checkout($node->getPath());
+        }
         error_log($_POST['name']. " : " .$_POST['type']);
 
         $node->addNode($_POST['name'],$_POST['type']);
@@ -247,6 +253,8 @@ class api_command_crbrowser extends api_command {
        /*if (! $node->isCheckedOut()) {
             $node->checkout();
         }*/
+          $vm = $sess->getWorkspace()->getVersionManager();
+            $vm->checkout($node->getPath());
         error_log("set property " . $node->getPath() . " " . $_GET['name'] ." = " . $_GET['value']);
         $node->setProperty($_GET['name'],$_GET['value']);
         $sess->save();
@@ -258,19 +266,22 @@ class api_command_crbrowser extends api_command {
      function createversion() {
          $sess = $this->getSession();
         $node = $this->getNode();
-        if (! $node->isCheckedOut()) {
-            $node->checkout();
-        }
+        //if (! $node->isCheckedOut()) {
+            $vm = $sess->getWorkspace()->getVersionManager();
+            $vm->checkout($node->getPath());
+
+        //}
 
         $node->addMixin('mix:versionable');
         $sess->save();
 
-
-        $node->checkin();
-
+        
+        $vm->checkin($node->getPath());
+        
         error_log("new version " .$node->getPath());
-        $node->checkout();
-          $this->data = json_encode(true);
+        $vm->checkout($node->getPath());
+
+        $this->data = json_encode(true);
      }
 
      function delcache() {

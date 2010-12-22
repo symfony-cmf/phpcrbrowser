@@ -384,7 +384,6 @@ YAHOO.cr.versionsTable = function(){
         }, 
 		createVersion: function() {
             var sUrl = '__json__/createversion/?fullpath=' + YAHOO.cr.propTable.currentPath ;
-			console.log(sUrl);
             var callback1 = {
                 success: function() {
                     YAHOO.cr.versionsTable.update(null)
@@ -392,10 +391,8 @@ YAHOO.cr.versionsTable = function(){
                 failure: null
                 
             };
-            console.log(sUrl);
             
 			YAHOO.util.Connect.asyncRequest('GET', sUrl, callback1);
-			console.log(sUrl);
             
 			
 		}
@@ -432,12 +429,12 @@ YAHOO.cr.topmenu = function(){
             var aSubmenuData = [{
                 id: "communication",
                 itemdata: [[{
-                    text: "Show History (missin)",
+                    text: "Show History",
                     onclick: {
                         fn: YAHOO.cr.versionsTable.update
                     }
                 },{
-                    text: "Create Version (missing)",
+                    text: "Create Version",
                     onclick: {
                         fn: YAHOO.cr.versionsTable.createVersion
                     }
