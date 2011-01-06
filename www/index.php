@@ -4,7 +4,7 @@
  *
  * @return jr_cr_session
  */
-include('../ext/jackalope/src/jackalope/autoloader.php');
+include('../ext/jackalope/src/Jackalope/autoloader.php');
 
 function getJRSession($name="default") {
 
