@@ -14,7 +14,7 @@ function getJRSession($name="default") {
     $workspace =  'default';
 
     $cred = new \PHPCR\SimpleCredentials($user, $pass);
-    $repo = new \Jackalope\Repository($server, null); //let jackalope factory create the transport
+    $repo = new \Jackalope\Repository(null, $server, null); //let jackalope factory create the transport
 
     $sess = $repo->login($cred, $workspace);
     return $sess;
