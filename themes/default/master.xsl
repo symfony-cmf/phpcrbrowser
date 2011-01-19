@@ -14,7 +14,7 @@
         <html lang="{$lang}" xml:lang="{$lang}">
             <head>
                 <title>
-               flx2
+               phpcrbrowser
                 </title>
                 
                 <xsl:call-template name="html_head_css"/>
