@@ -58,7 +58,7 @@
     
     <xsl:template name="html_body_header">
         <div id="hd">
-         ..
+         <br/>
         </div>
     </xsl:template>
     
@@ -103,7 +103,7 @@
     </xsl:template>
     
     <xsl:template name="page_body_footer">
-        ffff
+        
     </xsl:template>
     
     <xsl:template name="page_bottom_javascript">
