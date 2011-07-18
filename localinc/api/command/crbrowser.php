@@ -146,11 +146,7 @@ class api_command_crbrowser extends api_command {
             } catch (Exception $e) {
                 $v = '';
                 try {
-                foreach($prop->getValues() as $val) {
-                    $v .= "[" . $val->getString(). "] ";
-
-                }
-
+                    $v = $prop->getString();
                 } catch (Exception $e) {
                     $v = "__EXCEPTION2__";
                 }
