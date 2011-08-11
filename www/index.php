@@ -7,15 +7,13 @@
 include('../ext/jackalope/src/Jackalope/autoloader.php');
 
 function getJRSession($name="default") {
-    $factoryclass = '\Jackalope\RepositoryFactoryJackrabbit';
     $parameters = array('jackalope.jackrabbit_uri' => 'http://localhost:8080/server');
 
     $user = 'admin';
     $pass = 'admin';
     $workspace =  'default';
 
-    $factory = new $factoryclass();
-    $repo = $factory->getRepository($parameters);
+    $repo = \Jackalope\RepositoryFactoryJackrabbit::getRepository($parameters);
     $cred = new \PHPCR\SimpleCredentials($user, $pass);
     $sess = $repo->login($cred, $workspace);
     return $sess;
