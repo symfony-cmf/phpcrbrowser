@@ -1,8 +1,7 @@
 README
 ******
 
-
-* clone repo
+* clone repo ( git clone https://github.com/symfony-cmf/phpcrbrowser.git  )
 * bash install_vendors.sh
 * adust www/index.php to your configuration options (if you start jackrabbit with the default settings, those don't have to be changed)
 * add a virtual host to your apache like
