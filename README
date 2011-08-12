@@ -1,6 +1,7 @@
 README
 ******
 
+This is symfony-cmf/phpcrbrowser official repo
 
 * clone repo
 * bash install_vendors.sh
