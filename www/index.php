@@ -8,15 +8,12 @@ include('../ext/jackalope/src/Jackalope/autoloader.php');
 
 function getJRSession($name="default") {
 
-    $server = "http://localhost:8080/server";
-    $user = 'admin';
-    $pass = 'admin';
-    $workspace =  'default';
+    $cfg = api_config::getInstance();
 
-    $cred = new \PHPCR\SimpleCredentials($user, $pass);
-    $repo = new \Jackalope\Repository(null, $server, null); //let jackalope factory create the transport
+    $cred = new \PHPCR\SimpleCredentials($cfg->jcr[$name]['user'], $cfg->jcr[$name]['pass']);
+    $repo = new \Jackalope\Repository(null, $cfg->jcr[$name]['url'], null); //let jackalope factory create the transport
 
-    $sess = $repo->login($cred, $workspace);
+    $sess = $repo->login($cred, $cfg->jcr[$name]['workspace']);
     return $sess;
 }
 
