@@ -5,8 +5,9 @@ Name:           phpcrbrowser
 Version:        %{git_tag}
 Release:        0
 Summary:        PHP CR Browser
-License:        Open Source
 
+Group:          PHPCR
+License:        Open Source
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:       php >= 5.3.4
 BuildArch:      noarch
