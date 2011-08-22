@@ -18,27 +18,9 @@ default: &default
         default: en
         languages: [en]
     
-    db:
-        default:
-            driver: mdb2
-            dsn: mysql://dbuser@localhost/example
-            
     jcr: 
-        default.crx:
-            url: http://localhost:7402/crx/server
-            transport: davex
-            workspace: crx.default
-            user: admin
-            pass: admin
         default:
-            url: http://localhost:7402/crx/server
-            transport: davex
-            workspace: crx.default
+            url: http://localhost:8080/server
+            workspace: default
             user: admin
-            pass: admin
-        anonym:
-            url: http://localhost:7402/crx/server
-            transport: davex
-            workspace: crx.default
-            user: everyone
-            pass: 
+            password: admin
