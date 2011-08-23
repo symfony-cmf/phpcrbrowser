@@ -2,6 +2,12 @@
 
 set -x
 
+if [ ! -d "./bin"  ]
+then
+    echo 'ERR: You must run the script from the project root'
+    exit 1
+fi
+
 if [ "x$1" = "x" ] ; then
   echo Usage: $0 gittag
   exit 1
