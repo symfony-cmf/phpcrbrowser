@@ -28,7 +28,6 @@ rm -rf update_vendors.sh
 rm -rf bin/
 rm -rf www/info.php
 rm -rf ext/jackalope/tests/
-rm -rf www/static/bxe/
 find . -type d -name .git -print0 | xargs -0 rm -rf
 
 rm www/themes
