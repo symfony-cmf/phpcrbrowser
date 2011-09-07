@@ -1,0 +1,8 @@
+example:
+    <<: *default
+    jcr:
+        default:
+            url: http://my.host.name:8080/server
+            workspace: myworkspace
+            user: myusername
+            password: mypassword
