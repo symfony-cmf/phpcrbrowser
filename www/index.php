@@ -4,7 +4,8 @@
  *
  * @return jr_cr_session
  */
-include('../ext/jackalope/src/Jackalope/autoloader.php');
+
+require_once 'autoloader.php';
 
 function getJRSession() {
     $jcrConfig = api_config::getInstance()->jcr['default'];
