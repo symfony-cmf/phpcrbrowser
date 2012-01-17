@@ -1,5 +1,9 @@
 # PHP Content Repository Browser
 
+## Requirements
+
+* [XSL PHP Extension](http://php.net/manual/en/book.xsl.php)
+
 ## Installation
 * clone repo
 * bash install_vendors.sh
