@@ -1,5 +1,13 @@
 # PHP Content Repository Browser
 
+# NOTE: Almost obsolete
+
+We are working on a proper browser on top of the PHPCR api for this.
+
+Until its ready to use, you can still use this to read your repository, but **writing is broken**.
+
+To create data, please write php scripts that use the PHPCR implementation you use for the rest of your application.
+
 ## Requirements
 
 * [XSL PHP Extension](http://php.net/manual/en/book.xsl.php)
