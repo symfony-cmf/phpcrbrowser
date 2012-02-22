@@ -21,6 +21,6 @@ default: &default
     jcr: 
         default:
             url: http://localhost:8080/server
-            workspace: netvlies
+            workspace: default
             user: admin
             password: admin
