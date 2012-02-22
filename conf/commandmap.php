@@ -52,8 +52,14 @@ $m->route('__json__/tree/')
     'method' => 'addnode',
     'view' => array('class' => 'txt')));
 
+	
+      $m->route('__json__/removenode/')
+  ->config(array(
+    'command' => 'crbrowser',
+    'method' => 'removenode',
+    'view' => array('class' => 'txt')));
 
-
+	
       $m->route('__json__/delcache/')
   ->config(array(
     'command' => 'crbrowser',

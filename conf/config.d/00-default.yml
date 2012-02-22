@@ -5,7 +5,7 @@ default: &default
     tmpdir: "{API_PROJECT_DIR}tmp/"
     
     hosts:
-        example.org:
+        phpcrbrowser.markri.dev:
     
     exceptionhandler:
         "*": default
@@ -21,6 +21,6 @@ default: &default
     jcr: 
         default:
             url: http://localhost:8080/server
-            workspace: default
+            workspace: netvlies
             user: admin
             password: admin

@@ -1,13 +1,14 @@
 
 
 YAHOO.namespace("cr");
-
 YAHOO.cr.tree = function(){
 
+	var currentNode;
+	
     var buildTree = function(){
         //create a new tree:
         tree = new YAHOO.widget.TreeView("treeDiv1");
-        
+		
         //turn dynamic loading on for entire tree:
         tree.setDynamicLoad(loadNodeData, true);
         
@@ -31,6 +32,7 @@ YAHOO.cr.tree = function(){
         
         tree.subscribe("labelClick", function(node){
             loadNodeProperties(node);
+			YAHOO.cr.tree.currentNode = node;
         });
         
         //render tree with these toplevel nodes; all descendants of these nodes
@@ -57,6 +59,7 @@ YAHOO.cr.tree = function(){
     
     
     }
+	
     
     var loadNodeData = function(node, fnLoadComplete){
     
@@ -133,12 +136,14 @@ YAHOO.cr.tree = function(){
     return {
         init: function(){
             buildTree();
-        }
+        },
+		currentNode: currentNode
     }
     
     
     
 }();
+
 
 YAHOO.cr.propTable = function(){
 
@@ -393,9 +398,9 @@ YAHOO.cr.versionsTable = function(){
             };
             
 			YAHOO.util.Connect.asyncRequest('GET', sUrl, callback1);
-            
-			
+            	
 		}
+		
     }
     
     
@@ -444,6 +449,11 @@ YAHOO.cr.topmenu = function(){
                         fn: YAHOO.cr.dialogNewNode.show
                     }
                 }],[, {
+					text: "Remove Node",
+                    onclick: {
+                        fn: removenode
+                    }
+                }],[, {				
                     text: "Delete Cache",
                     onclick: {
                         fn: deletecache
@@ -485,6 +495,20 @@ YAHOO.cr.topmenu = function(){
             }
             YAHOO.util.Connect.asyncRequest('GET', sUrl, callback1);
     };
+    var removenode = function() {
+          var sUrl = '__json__/removenode/?fullpath=' + YAHOO.cr.propTable.currentPath;
+            var callback1 = {
+                success: null,
+                failure: null,
+            }
+            YAHOO.util.Connect.asyncRequest('GET', sUrl, callback1);
+			//YAHOO.cr.tree.init();
+			//var arr = YAHOO.cr.propTable.currentPath.split('/');
+			//arr.pop()
+			//var parent = arr.join('/');
+			//YAHOO.util.Connect.asyncRequest('GET', '__json__/tree/?fullpath=' + parent, callback1);
+			YAHOO.widget.TreeView.getTree('treeDiv1').removeNode(YAHOO.cr.tree.currentNode, true);
+    };	
     return {
         init: function(){
             initMenu();
