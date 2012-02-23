@@ -5,7 +5,7 @@ default: &default
     tmpdir: "{API_PROJECT_DIR}tmp/"
     
     hosts:
-        phpcrbrowser.markri.dev:
+        example.org:
     
     exceptionhandler:
         "*": default

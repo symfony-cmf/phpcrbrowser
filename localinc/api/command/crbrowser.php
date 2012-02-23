@@ -248,11 +248,11 @@ class api_command_crbrowser extends api_command {
 
 	 
      function removenode() {
-         $sess = $this->getSession();
+        $sess = $this->getSession();
         $node = $this->getNode();
-		$node->remove();
+        $node->remove();
         $sess->save();
-          $this->data = json_encode(true);
+        $this->data = json_encode(true);
      }	 
 
      function setproperty() {
