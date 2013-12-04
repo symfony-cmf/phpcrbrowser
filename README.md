@@ -1,12 +1,9 @@
 # PHP Content Repository Browser
 
-# NOTE: Almost obsolete
+# NOTE: Obsolete
 
-We are working on a proper browser on top of the PHPCR api for this.
-
-Until its ready to use, you can still use this to read your repository, but **writing is broken**.
-
-To create data, please write php scripts that use the PHPCR implementation you use for the rest of your application.
+There is a better browser available at https://github.com/marmelab/phpcr-browser
+See also https://github.com/symfony-cmf/symfony-cmf/wiki/PHPCR-repository-admin for other alternatives.
 
 ## Requirements
 
