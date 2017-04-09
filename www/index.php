@@ -4,29 +4,23 @@
  *
  * @return jr_cr_session
  */
-include('../ext/jackalope/src/Jackalope/autoloader.php');
+include('../ext/jackalope/src/autoload.jackrabbit.dist.php');
 
-function getJRSession($name="default") {
+function getJRSession() {
+    $jcrConfig = api_config::getInstance()->jcr['default'];
+    $parameters = array('jackalope.jackrabbit_uri' => $jcrConfig['url']);
 
-    $server = "http://localhost:8080/server";
-    $user = 'admin';
-    $pass = 'admin';
-    $workspace =  'default';
-
-    $cred = new \PHPCR\SimpleCredentials($user, $pass);
-    $repo = new \Jackalope\Repository(null, $server, null); //let jackalope factory create the transport
-
-    $sess = $repo->login($cred, $workspace);
+    $repo = \Jackalope\RepositoryFactoryJackrabbit::getRepository($parameters);
+    $cred = new \PHPCR\SimpleCredentials($jcrConfig['user'], $jcrConfig['password']);
+    $sess = $repo->login($cred, $jcrConfig['workspace']);
     return $sess;
 }
 
 $start = microtime(true);
 require_once dirname(__FILE__) . '/../inc/api/init.php';
 
-
 api_init::start();
 $session = getJRSession();
-
 $rn = $session->getRootNode();
 
 /*

@@ -13,5 +13,5 @@ cd $DIR
 git clone git://github.com/jackalope/jackalope.git jackalope
 
 cd jackalope
-git submodule init
-git submodule update
+git checkout 0265558e77f1adb6ef1dd950d46b50ed5869859b
+git submodule update --init --recursive
